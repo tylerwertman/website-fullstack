@@ -11,14 +11,14 @@ import educationH from './images/Education-LG.svg'
 import contactH from './images/Contact-LG.svg'
 import {Link} from 'react-router-dom'
 
-const Nav = () => {
+const Nav = (props) => {
   const [hoveredElement, setHoveredElement] = useState(null)
   
-  const hover = (index, e) => {
+  const hover = (index) => {
     // e.stopPropagation();
     console.log("hover running")
       setHoveredElement(index)
-      console.log(index)
+      // console.log(index)
   }
   return (
     <nav>

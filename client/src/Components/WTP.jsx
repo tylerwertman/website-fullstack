@@ -1,30 +1,32 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import wtp from './images/WTP.mov'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
 
 const WTP = () => {
-    const rng = Math.floor((Math.random() * 152)+1)
-    // setId(rng)
+    let rng = Math.floor((Math.random() * 152)+1)
     
     //make object with name, id, sprites,
-    const pokeObj = {
+    const [pokeObj, setPokeObj] = useState({
         pName: "",
         id: rng,
         spriteFD: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${rng}.png`,
         spriteFS: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${rng}.png`,
         spriteBD: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${rng}.png`,
         spriteBS: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/${rng}.png`
-    }
+    })
 
-
+    const [isHidden, setIsHidden] = useState(true)
+    const [isShiny, setIsShiny] = useState(false)
+    const [isFront, setIsFront] = useState(true)
+    const [count, setCount] = useState(0)
+    
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${rng}`)
         .then(response => {
-            console.log(response.data)
-            console.log(rng)
+            // console.log(response.data)
+            // console.log(rng)
             // const rng = Math.floor(Math.random() * 10)
-            setPoke({
+            setPokeObj({
                 pName: response.data.name,
                 id: response.data.id,
                 spriteFD: response.data.sprites.front_default,
@@ -32,30 +34,12 @@ const WTP = () => {
                 spriteBD: response.data.sprites.back_default,
                 spriteBS: response.data.sprites.back_shiny
             })
-            
-            console.log(response.data.name)
-            console.log(poke)
-            console.log(pokeObj)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-        },[])
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        },[count])
 
-
-
-    const [poke, setPoke] = useState({
-        pName: ``,
-        id: rng,
-        spriteFD: ``,
-        spriteFS: ``,
-        spriteBD: ``,
-        spriteBS: ``
-    })
-    
-    const [imgSrc, setImgSrc] = useState(poke.spriteFD)
-    const [sillhouette, setSillhouette] = useState("sillhouette")
-    const [WTP, setWTP] = useState(`Who's that Pokemon?`)
 
     // const [hidden, setHidden] = useState(true)
     // let arr = 0
@@ -76,109 +60,48 @@ const WTP = () => {
         
     const newPoke = () => {
         console.log("running newPoke");
-        // setId(Math.floor(Math.random() * 152))
-        // arr++
-        // console.log(`nP ${pName}`)
-        // console.log(`nP ${id}`)
-        // console.log(`nP ${spriteFD}`)
-        // if (hidden){
-        //     console.log("hidden is true"+id)
-            axios.get(`https://pokeapi.co/api/v2/pokemon/${rng}`)
-            .then(response => {
-                // setpName(response.data.name);
-                // setSpriteFD(response.data.sprites.front_default);
-                // setSpriteFS(response.data.sprites.front_shiny)
-                setWTP(`Who's that Pokemon?`)
-                setSillhouette("sillhouette")
-                // setImgSrc(spriteFD)
+        rng = Math.floor((Math.random() * 152)+1)
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${rng}`)
+        .then(response => {
+            setPokeObj({
+                pName: response.data.name,
+                id: response.data.id,
+                spriteFD: response.data.sprites.front_default,
+                spriteFS: response.data.sprites.front_shiny,
+                spriteBD: response.data.sprites.back_default,
+                spriteBS: response.data.sprites.back_shiny
             })
-            .catch(error => {
-                console.log(error)
-            })
-        // }
-        //     const pokeText = document.querySelector(".js p");
-        //     pokeText.innerText = `Who's that Pokemon?`
-        //     pokeText.style.textTransform = "";
-
-        //     })
+            setIsHidden(true)
+            setIsFront(true)
+            setIsShiny(false)
+            // setImgSrc(spriteFD)
+        })
+        .catch(error => {
+            console.log(error)
+        })
     }
 
     const revealPoke = () => {
         console.log("running revealPoke");
-        
-        // setId(Math.floor(Math.random() * 152))
-        // axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
-        // .then(response => {
-        //     console.log(response.data)
-        //     // const rng = Math.floor((Math.random() * 152)+1)
-        //     // setId(rng)
-        //     setpName(response.data.name);
-        //     setSpriteFD(response.data.sprites.front_default);
-        //     setSpriteFS(response.data.sprites.front_shiny)
-        //     // setSpriteBD(response.data.sprites.back_default)
-        //     // setSpriteBS(response.data.sprites.back_shiny)
-        //     // console.log(response.data.sprites)
-        setWTP(`It's ${poke.pName}!`)
-        setSillhouette("")
-        //     const pokeImg = document.querySelector(".js img");
-        //     pokeImg.src = spriteFD
-        //     const pokeText = document.querySelector(".js p");
-        //     pokeText.innerText = `It's ${pName}!`
-        //     pokeImg.classList.remove("sillhouette")
-        //     pokeText.style.textTransform = "Capitalize";
-
-        //     })
-        //     .catch(error => {
-        //         console.log(error)
-        //     })
+        setIsHidden(false)
     }
 
     const shinyPoke = () => {
-        console.log("running shinyPoke");
-        // const pokeImg = document.querySelector(".js img");
-        // if (pokeImg.classList.length === 0 && pokeImg.src === spriteFD) {
-        //     pokeImg.src = spriteFS;
-        // }
-        // else if (pokeImg.classList.length === 0 && pokeImg.src === spriteFS) {
-        //     pokeImg.src = spriteFD;
-        // }
+        if(!isHidden && !isShiny) setIsShiny(!isShiny); console.log("running shinyPoke");
     }
-
     const defaultPoke = () => {
-        console.log("running defaultPoke");
-        // const pokeImg = document.querySelector(".js img");
-        // if (pokeImg.classList.length === 0 && pokeImg.src === spriteFS) {
-        //     pokeImg.src = spriteFD;
-        // }
-        // else if (pokeImg.classList.length === 0 && pokeImg.src === spriteFD) {
-        //     pokeImg.src = spriteFS;
-        // }
-    }
-
-    const frontPoke = () => {
-        console.log("running frontPoke");
-    //     let currentPoke = { newPoke };
-    //     const response = fetch("https://pokeapi.co/api/v2/pokemon/" + currentPoke);
-    //     const pokeData = response.json();
-    //     const pokeImg = document.querySelector(".js img");
-    //     if (pokeImg.classList.length === 0 && pokeImg.src === pokeData.sprites.back_default) {
-    //         pokeImg.src = pokeData.sprites.front_default;
-    //     } else if (pokeImg.classList.length === 0 && pokeImg.src === pokeData.sprites.back_shiny) {
-    //         pokeImg.src = pokeData.sprites.front_shiny
-    //     }
+        if(!isHidden && isShiny) setIsShiny(!isShiny); console.log("running defaultPoke");
     }
 
     const backPoke = () => {
-        console.log("running backPoke");
-    //     let currentPoke = { newPoke };
-    //     const response = fetch("https://pokeapi.co/api/v2/pokemon/" + currentPoke);
-    //     const pokeData = response.json();
-    //     const pokeImg = document.querySelector(".js img");
-    //     if (pokeImg.classList.length === 0 && pokeImg.src === pokeData.sprites.front_default) {
-    //         pokeImg.src = pokeData.sprites.back_default;
-    //     } else if (pokeImg.classList.length === 0 && pokeImg.src === pokeData.sprites.front_shiny) {
-    //         pokeImg.src = pokeData.sprites.back_shiny
-    //     }
+        if(!isHidden && !isFront) setIsFront(!isFront); console.log("running backPoke");
+    }
+    const frontPoke = () => {
+        if(!isHidden && isFront) setIsFront(!isFront); console.log("running frontPoke");
+    }
+
+    const capitalize = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
     return (
@@ -188,8 +111,13 @@ const WTP = () => {
             <div className="gameboy">
                 <div className="gameboyScr">
                     <div className="js" >
-                        <img src={imgSrc} className={sillhouette} alt="sillhouette" />
-                        <p id="textBox">{WTP}</p>
+                        <img src={
+                            !isShiny && isFront ? pokeObj.spriteFD :
+                            isShiny && isFront ? pokeObj.spriteFS :
+                            !isShiny && !isFront ? pokeObj.spriteBD :
+                            isShiny && !isFront ? pokeObj.spriteBS : null
+                            } className={isHidden ? "sillhouette" : ""} alt="sillhouette" />
+                        <p id="textBox">{isHidden ? "Who's that Pokemon?" : `It's ${capitalize(pokeObj.pName)}`}</p>
                     </div>
                     <br />
                     <p>GAMEBOY <span className="C">C</span><span className="O">O</span><span className="L">L</span><span className="O2">O</span><span className="R">R</span></p>
@@ -200,9 +128,9 @@ const WTP = () => {
                         <div className="sqBtn"></div>
                         <div className="sqBtn activeBtn" onClick={shinyPoke}>^</div>
                         <div className="sqBtn"></div>
-                        <div className="sqBtn activeBtn" onClick={frontPoke}>&lt;</div>
+                        <div className="sqBtn activeBtn" onClick={backPoke}>&lt;</div>
                         <div className="sqBtn dot">•</div>
-                        <div className="sqBtn activeBtn" onClick={backPoke}>&gt;</div>
+                        <div className="sqBtn activeBtn" onClick={frontPoke}>&gt;</div>
                         <div className="sqBtn"></div>
                         <div className="sqBtn activeBtn" onClick={defaultPoke}>v</div>
                         <div className="sqBtn"></div>
