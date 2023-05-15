@@ -39,27 +39,9 @@ const WTP = () => {
             console.log(error)
         })
         },[count])
-
-
-    // const [hidden, setHidden] = useState(true)
-    // let arr = 0
-    
-
-    // useEffect(()=>{
-    //     // newPoke();
-    //     console.log(rng)
-    //     setImgSrc(poke.spriteFD)
-    //     axios.get(`https://pokeapi.co/api/v2/pokemon/${rng}`)
-    //     .then(response => {
-    //         console.log(response.data.name)
-    //     })
-    //     .catch(error => {
-    //                     console.log(error)
-    //     })
-    // },[])
         
     const newPoke = () => {
-        console.log("running newPoke");
+        // console.log("running newPoke");
         rng = Math.floor((Math.random() * 152)+1)
         axios.get(`https://pokeapi.co/api/v2/pokemon/${rng}`)
         .then(response => {
@@ -82,22 +64,22 @@ const WTP = () => {
     }
 
     const revealPoke = () => {
-        console.log("running revealPoke");
+        // console.log("running revealPoke");
         setIsHidden(false)
     }
 
     const shinyPoke = () => {
-        if(!isHidden && !isShiny) setIsShiny(!isShiny); console.log("running shinyPoke");
+        if(!isHidden && !isShiny) setIsShiny(!isShiny)
     }
     const defaultPoke = () => {
-        if(!isHidden && isShiny) setIsShiny(!isShiny); console.log("running defaultPoke");
+        if(!isHidden && isShiny) setIsShiny(!isShiny)
     }
 
     const backPoke = () => {
-        if(!isHidden && !isFront) setIsFront(!isFront); console.log("running backPoke");
+        if(!isHidden && !isFront) setIsFront(!isFront)
     }
     const frontPoke = () => {
-        if(!isHidden && isFront) setIsFront(!isFront); console.log("running frontPoke");
+        if(!isHidden && isFront) setIsFront(!isFront)
     }
 
     const capitalize = (str) => {
@@ -106,7 +88,7 @@ const WTP = () => {
 
     return (
         <div>
-            <h4>Who's That Pokemon?</h4>
+            <h4>Who's That Pokemon? (Interactive)</h4>
             <br />
             <div className="gameboy">
                 <div className="gameboyScr">

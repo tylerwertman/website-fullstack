@@ -8,6 +8,10 @@ const Projects = () => {
                 <div className="content">
                 <WTP/>
                 </div>
+                <br/>
+                <div className="content">
+                <a href="https://google.com">test</a>
+                </div>
             </div>
     )
 }

@@ -6,13 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 
 function App() {
-  const [hoveredElement, setHoveredElement] = useState(null)
 
   return (
     <BrowserRouter>
     <div className="App">
       <Routes>
-        <Route path="/" element={<Nav hoveredElemen={hoveredElement} setHoveredElement={setHoveredElement}/>} />
+        <Route path="/" element={<Nav />} />
         {/* <Route path="/#main" element={<Main/>} /> */}
         {/* <Route path="/#footer" element={<Footer/>} /> */}
       </Routes>
