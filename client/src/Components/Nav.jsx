@@ -11,7 +11,7 @@ import educationH from './images/Education-LG.svg'
 import contactH from './images/Contact-LG.svg'
 import {Link} from 'react-router-dom'
 
-const Nav = (props) => {
+const Nav = () => {
   const [hoveredElement, setHoveredElement] = useState(null)
   const [isNavOpen, setIsNavOpen] = useState(false)
   const hover = (index) => {
@@ -27,7 +27,7 @@ const Nav = (props) => {
   }
   return (
     <nav>
-        <h1><a href="#home">Tyler Wertman Developments</a></h1>
+        <h1><a href="/#home">Tyler Wertman Developments</a></h1>
             <div id="navLinksL">
               {/* <img src="" alt="" /> */}
               <Link className={hoveredElement === 0 ? 'shadowNav' : 'hover'} onMouseEnter={()=>{hover(0)}} onMouseLeave={hover} to={"/#home"}><img src={hoveredElement === 0 ? homeH : home} alt="home"/><span className={hoveredElement === 0 ? 'navLiHover' : 'hidden'}>&nbsp;Home</span></Link>&nbsp;

@@ -6,12 +6,12 @@ const MessageSchema = new mongoose.Schema({
     fname: {
         type: String,
         required: [true, "Name is required"],
-        minlength: [2, "Name must be at least 2 characters"]
+        minlength: [2, "Name must be longer"]
     },
     email: {
         type: String,
         required: [true, "Email is required"],
-        minlength: [2, "Email must be at least 2 characters"],
+        minlength: [6, "Email must be valid"],
         validate: {
             validator: function (value) {
                 return emailRegex.test(value);
@@ -21,7 +21,9 @@ const MessageSchema = new mongoose.Schema({
     },
     message: {
         type: String,
-        required: [true, "Message is required"]
+        required: [true, "Message is required"],
+        minlength: [10, "Message must be longer"],
+        maxlength: [200, "Message must be shorter"]
     }
 },
     { timestamps: true }
