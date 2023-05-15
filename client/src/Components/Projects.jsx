@@ -10,7 +10,7 @@ const Projects = () => {
                 </div>
                 <br/>
                 <div className="content">
-                <a href="https://google.com">test</a>
+                <a href="http://bookclub.tylerw.xyz"><h3>Book Club</h3></a>
                 </div>
             </div>
     )
