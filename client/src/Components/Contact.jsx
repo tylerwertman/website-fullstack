@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 
-const Contact = () => {
-
+const Contact = (props) => {
+    const {darkMode} = props
     const [message, setMessage] = useState({fname: "", email: "", message: ""})
     const [errors, setErrors] = useState({})
 
@@ -38,9 +38,9 @@ const Contact = () => {
         })
     }
     return (
-        <div className="section" id="contact">
+        <div className="section" id={darkMode?"contactDark":"contact"} style={{marginBottom:"100px"}}>
             <h2>Contact</h2>
-            <div className="content" id="form"> 
+            <div className={darkMode?"contentDark":"content"} id="form"> 
                 <form onSubmit={submitHandler}>
                     {errors.fname ? <p style={{color:"red"}}>{errors.fname.message}</p>: ""}
 

@@ -25,8 +25,8 @@ const colorToggle = () => {
 }
 
   return (
-    <footer>
-        © 2023 Tyler Wertman Developments
+    <footer className={darkMode?"footerDark":""}>
+        <span>© 2023 Tyler Wertman Developments </span>
         <button className={darkMode?"btn btn-primary":"btn btn-dark"} onClick={colorToggle}>{darkMode?"☀️":"🌙"}</button>
     </footer>
   )

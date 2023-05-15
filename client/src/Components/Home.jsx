@@ -7,7 +7,9 @@ import linkedinH from './images/Linkedin-fill-SG.svg'
 import githubH from './images/Github-fill-SG.svg'
 import fileH from './images/File-fill-SG.svg'
 
-const Home = () => {
+const Home = (props) => {
+    const {darkMode} = props
+
     const [hoveredElement, setHoveredElement] = useState(null)
 
     const hover = (index) => {
@@ -18,13 +20,13 @@ const Home = () => {
     }
     
     return (
-        <div className="section" id="home">
+        <div className="section" id={darkMode?"homeDark":"home"}>
             <div id="introOne">
                 <img src={me} alt="tyler, website owner" />
                 <h2>Tyler Wertman</h2><br />
                 <h4>Developer & Entrepreneur</h4>
             </div>
-            <div id="introTwo">
+            <div id={darkMode?"introTwoDark":"introTwo"}>
                 <br /><h2>Hello, I am Tyler and I am a full-stack web developer</h2><br />
                 <div id="icons">
                     <a href="https://www.linkedin.com/in/tyler-wertman/" target="_blank noopener noreferrer" rel="noreferrer"><img className={hoveredElement === 0 ? "shadow" : ""} onMouseEnter={()=>{hover(0)}} onMouseOut={hover} src={hoveredElement === 0 ? linkedinH : linkedin} alt="linkedin" /></a>

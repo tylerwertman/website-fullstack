@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -24,19 +19,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 
 
 /* /// */
@@ -51,14 +33,12 @@
 body {
   background-color: whitesmoke;
 }
-nav {
-  display: flex;
-}
 #container, footer {
   width: 100%;
   margin: 0 auto;
 }
 nav {
+  display: flex;
   position: fixed;
   top: 0%;
   width: 100%;
@@ -67,7 +47,6 @@ nav {
   z-index: 100;
 }
 nav, footer {
-  background-color: whitesmoke;
   background-color: lightgrey;
   /* color: darkslategrey; */
   justify-content: space-between;
@@ -80,6 +59,34 @@ nav h1 {
   padding: 10px 0;
   font-size: 18px;
   margin-right: 10px;
+}
+.navDark a {
+  padding: 10px 0;
+  font-size: 18px;
+  margin-right: 10px;
+  color: lightgrey;
+}
+nav a, footer {
+  text-decoration: none;
+  color: darkslategrey;
+}
+footer {
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0%;
+  text-align: center;
+  margin: 0;
+}
+footer img {
+  cursor: pointer;
+}
+.footerDark, .navDark{
+  background-color: rgb(50, 50, 50);
+  box-shadow: 0 0 10px lightgrey;
+
+}
+.footerDark span {
+  color: lightgrey;
 }
 #navLinksL {
   margin-right: 20px;
@@ -125,13 +132,14 @@ nav h1 {
   border-radius: 15px;
   font-size: 14px;
 }
-nav a, footer {
-  text-decoration: none;
-  color: darkslategrey;
-}
 .section {
   padding-top: 50px;
   width: 100%;
+}
+.sectionDark {
+  padding-top: 50px;
+  width: 100%;
+  background-color: red;
 }
 main {
   padding: 50px 0 0 0;
@@ -145,6 +153,18 @@ main {
   flex-direction: column;
   align-items: center;
   background-color: lightgrey;
+  border-radius: 65px;
+  border-radius: 35px;
+  padding: 20px;
+  margin-top: 50px;
+  width: 300px;
+}
+#homeDark {                                        
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(50, 50, 50);
+  color: lightgrey;
   border-radius: 65px;
   border-radius: 35px;
   padding: 20px;
@@ -173,6 +193,9 @@ main {
 #introOne h4, #introOne h2 {
   color: lightgrey;
 }
+.introTwoDark #icons {
+  margin-left: 20px
+}
 #icons{
   display: flex;
   justify-content: space-evenly;
@@ -194,6 +217,11 @@ main {
   width: 300px;
   margin-left: 20px;
 }
+#introTwoDark h2 {
+  width: 300px;
+  /* margin-left: 20px; */
+  color: lightgrey;
+}
 
 #introTwo p {
   line-height: 1.2em;
@@ -209,6 +237,19 @@ main {
   margin-bottom: 50px;
   width: 100%;
 }
+#aboutDark h2, #projectsDark h2, #contactDark h2, #educationDark h2 {
+  background-color: rgb(50, 50, 50);
+  color: lightgrey;
+  /* width: 1280px; */
+  text-align: center;
+  padding: 10px 0 10px 0;
+  box-shadow: 0 0 10px lightgrey;
+  margin-bottom: 50px;
+  width: 100%;
+}
+#contactDark label {
+  color: lightgrey;
+}
 .content {
   margin: 0 auto;
   text-align: center;
@@ -218,19 +259,45 @@ main {
   border-radius: 50px;
   width: 300px;
 }
-#about .content, #todo .content{
-  line-height: 1.3;
+.contentDark {
+  margin: 0 auto;
+  text-align: center;
+  width: 560px;
+  background-color: rgb(50, 50, 50);
+  color: lightgrey;
+  padding: 20px;
+  border-radius: 50px;
+  width: 300px;
 }
+.contentDark a, .contentDark h3, .contentDark h4 {
+  color: lightgrey
+}
+
 #about .content {
+  line-height: 1.3;
+  text-align: justify;    
+}
+#aboutDark .contentDark {
+  line-height: 1.3;
   text-align: justify;    
 }
 #about p {
   padding: 10px;
 }
+#aboutDark p {
+  padding: 10px;
+  color: lightgrey;
+}
 #education li {
   margin-left: 26.75%;
   list-style: square;
   text-align: left;
+}
+#educationDark li {
+  margin-left: 26.75%;
+  list-style: square;
+  text-align: left;
+  color: lightgrey
 }
 #contact {
   margin-bottom: 50px;
@@ -255,7 +322,6 @@ input[type=submit], input[type=reset] {
   /* background-color: lightgrey; */
   cursor: pointer;
 }
-
 /* Pokemon */
 
 .gameboy {
@@ -421,17 +487,6 @@ top: 80px;
 /* left: 480px; */
 color: whitesmoke;
 }
-
-footer {
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0%;
-  text-align: center;
-  margin: 0;
-}
-footer img {
-  cursor: pointer;
-}
 #space {
   text-decoration: none;
 }
@@ -444,6 +499,12 @@ footer img {
       flex-direction: row;
       width: 560px;
   }
+  #homeDark {
+      flex-direction: row;
+      width: 560px;
+      background-color: rgb(50, 50, 50);
+      color: lightgrey;
+  }
   #introTwo {
       margin-left: 20px;
       width: 560px;
@@ -452,7 +513,15 @@ footer img {
       width: 240px;
       margin-left: 0;
   }
+  #introTwoDark h2 {
+      width: 240px;
+      margin-left: 20px;
+      color: lightgrey
+  }
   .content {
+      width: 560px;
+  }
+  .contentDark {
       width: 560px;
   }
   form br.hidden {
@@ -476,6 +545,10 @@ footer img {
   #education li {
       margin-left: 37.5%;
   }
+  #educationDark li {
+      margin-left: 37.5%;
+      color: lightgrey;
+  }
   .gameboy {
       display: flex;
   }
@@ -495,6 +568,11 @@ footer img {
       font-size: 25px;
   }
   #introTwo h2 {
+      width: 580px;
+      margin-left: -20px;
+      font-size: 40px;
+  }
+  #introTwoDark h2 {
       width: 580px;
       margin-left: -20px;
       font-size: 40px;
@@ -521,8 +599,16 @@ footer img {
   .content {
       width: 1120px;
   }
+  .contentDark {
+      width: 1120px;
+      background-color: darkslategrey;
+  }
   .content p {
       font-size: 24px;
+  }
+  .contentDark p {
+      font-size: 24px;
+      color: lightgrey
   }
   #education li {
       margin-left: 43.75%;
@@ -545,6 +631,11 @@ footer img {
   }
   #introTwo h2 {
       width: 300px;
+  }
+  #introTwoDark h2 {
+      width: 300px;
+      background-color: darkslategrey;
+      color: lightgrey;
   }
   /* #navLinksSE {
       top: 10%;
@@ -572,8 +663,18 @@ footer img {
       width: 265px;
       margin-left: 7px;
   }
+  #introTwoDark h2 {
+      width: 265px;
+      margin-left: 7px;
+      background-color: darkslategrey;
+      color: lightgrey;
+  }
   .content {
       width: 265px;
+  }
+  .contentDark {
+      width: 265px;
+      background-color: darkslategrey;
   }
   video {
       width: 250px;

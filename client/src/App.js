@@ -18,11 +18,11 @@ function App() {
     <div className="App">
         <Nav darkMode={darkMode}/>
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/admin-login" element={<LoginForm/>}/>
-            <Route path="/admin-register" element={<RegisterForm/>}/>
-            <Route path="/messages" element={<Messages/>}/>
-            <Route path="/*" element={<NotFound/>} />
+            <Route path="/" element={<Main darkMode={darkMode}/>} />
+            <Route path="/admin-login" element={<LoginForm darkMode={darkMode}/>}/>
+            <Route path="/admin-register" element={<RegisterForm darkMode={darkMode}/>}/>
+            <Route path="/messages" element={<Messages darkMode={darkMode}/>}/>
+            <Route path="/*" element={<NotFound darkMode={darkMode}/>} />
           </Routes>
         <Footer darkMode={darkMode} setDarkMode={setDarkMode}/>
     </div>

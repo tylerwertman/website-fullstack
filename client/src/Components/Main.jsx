@@ -5,14 +5,15 @@ import Projects from './Projects'
 import Education from './Education'
 import Contact from './Contact'
 
-const Main = () => {
+const Main = (props) => {
+    const {darkMode} = props
     return (
         <main>
-            <Home/>
-            <About/>
-            <Projects/>
-            <Education/>
-            <Contact/>
+            <Home darkMode={darkMode}/>
+            <About darkMode={darkMode}/>
+            <Projects darkMode={darkMode}/>
+            <Education darkMode={darkMode}/>
+            <Contact darkMode={darkMode}/>
         </main>
     )
 }
