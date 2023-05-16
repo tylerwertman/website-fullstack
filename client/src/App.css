@@ -63,7 +63,10 @@ nav h1 {
 .navDark a {
   padding: 10px 0;
   font-size: 18px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
+  color: lightgrey;
+}
+.navDark span {
   color: lightgrey;
 }
 nav a, footer {
@@ -114,7 +117,7 @@ footer img {
   /* display: none; */
   flex-direction: column;
   position: fixed;
-  top: 57px;
+  top: 60px;
   right: 0%;
   background-color: lightgray;
   width: 40px;
@@ -124,6 +127,21 @@ footer img {
   padding: 20px;
   gap: 30px;
   box-shadow: 0 0 10px black;
+}
+.navLinksSEDark {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 60px;
+  right: 0%;
+  background-color: rgb(50, 50, 50);
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  /* height: 200px; */
+  padding: 20px;
+  /* gap: 30px; */
+  box-shadow: 0 0 10px lightgrey;
 }
 .navLinksSE a {
   display: flex;
@@ -193,8 +211,14 @@ main {
 #introOne h4, #introOne h2 {
   color: lightgrey;
 }
-.introTwoDark #icons {
-  margin-left: 20px
+#iconsDark {
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+#iconsDark img {
+  margin: 10px 5px 0 5px;
+  width: 30px;
 }
 #icons{
   display: flex;
@@ -219,6 +243,7 @@ main {
 }
 #introTwoDark h2 {
   width: 300px;
+  line-height: 1.5;
   /* margin-left: 20px; */
   color: lightgrey;
 }
@@ -540,7 +565,10 @@ color: whitesmoke;
       display: none;
   }
   .navLinksSE, .navLinksSE a {
-      /* display: none; */
+      display: none;
+  }
+  .navLinksSEDark, .navLinksSEDark a {
+      display: none;
   }
   #education li {
       margin-left: 37.5%;
@@ -634,7 +662,6 @@ color: whitesmoke;
   }
   #introTwoDark h2 {
       width: 300px;
-      background-color: darkslategrey;
       color: lightgrey;
   }
   /* #navLinksSE {
@@ -666,7 +693,6 @@ color: whitesmoke;
   #introTwoDark h2 {
       width: 265px;
       margin-left: 7px;
-      background-color: darkslategrey;
       color: lightgrey;
   }
   .content {
@@ -674,7 +700,6 @@ color: whitesmoke;
   }
   .contentDark {
       width: 265px;
-      background-color: darkslategrey;
   }
   video {
       width: 250px;
@@ -708,9 +733,15 @@ color: whitesmoke;
   .navLinksSE, .navLinksSE a {
       display: none;
   }
+  .navLinksSEDark, .navLinksSEDark a {
+      display: none;
+  }
 }
 @media screen and (377px < width < 565px) {
   .navLinksSE {
+      top: 60px;
+  }
+  .navLinksSEDark {
       top: 60px;
   }
 }
@@ -718,9 +749,15 @@ color: whitesmoke;
   .navLinksSE {
       top: 83px;
   }
+  .navLinksSEDark {
+      top: 83px;
+  }
 }
 @media screen and (width < 231px) {
   .navLinksSE {
+      top: 83px;
+  }
+  .navLinksSEDark {
       top: 83px;
   }
 }
