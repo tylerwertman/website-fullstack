@@ -1,10 +1,7 @@
 
-import React, { useEffect, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
 import Cookies from 'js-cookie';
-// import Main from './Main';
 import NotFound from './NotFound';
-
 
 const withAuth = (Component) => {
     return () => {

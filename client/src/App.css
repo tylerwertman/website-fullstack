@@ -59,6 +59,12 @@ nav h1 {
   padding: 10px 0;
   font-size: 18px;
   margin-right: 10px;
+  font-weight: bold;
+}
+.nav a {
+  padding: 10px 0;
+  font-size: 18px;
+  /* margin-right: 10px; */
 }
 .navDark a {
   padding: 10px 0;
@@ -175,7 +181,7 @@ main {
   border-radius: 35px;
   padding: 20px;
   margin-top: 50px;
-  width: 300px;
+  width: 350px;
 }
 #homeDark {                                        
   display: flex;
@@ -187,7 +193,7 @@ main {
   border-radius: 35px;
   padding: 20px;
   margin-top: 50px;
-  width: 300px;
+  width: 350px;
 }
 #introOne {
   /* margin: 0 0 0 640px; */
@@ -210,6 +216,7 @@ main {
 }
 #introOne h4, #introOne h2 {
   color: lightgrey;
+  font-weight: bold;
 }
 #iconsDark {
   margin-left: 20px;
@@ -230,7 +237,13 @@ main {
   width: 30px;
 }
 #introTwo {
-  width: 200px;
+  padding-left: 20px;
+  text-align: center;
+  line-height: 1.5;
+  width: 340px;
+  padding-left: 0;
+}
+#introTwoDark {
   padding-left: 20px;
   text-align: center;
   line-height: 1.5;
@@ -238,14 +251,16 @@ main {
   padding-left: 0;
 }
 #introTwo h2 {
-  width: 300px;
+  width: 276px;
   margin-left: 20px;
+  font-weight: bold;
 }
 #introTwoDark h2 {
-  width: 300px;
-  line-height: 1.5;
-  /* margin-left: 20px; */
+  width: 276px;
+  /* line-height: 1.5; */
+  margin-left: 20px;
   color: lightgrey;
+  font-weight: bold;
 }
 
 #introTwo p {
@@ -261,6 +276,7 @@ main {
   box-shadow: 0 0 10px black;
   margin-bottom: 50px;
   width: 100%;
+  font-weight: bold;
 }
 #aboutDark h2, #projectsDark h2, #contactDark h2, #educationDark h2 {
   background-color: rgb(50, 50, 50);
@@ -271,6 +287,7 @@ main {
   box-shadow: 0 0 10px lightgrey;
   margin-bottom: 50px;
   width: 100%;
+  font-weight: bold;
 }
 #contactDark label {
   color: lightgrey;
@@ -294,8 +311,12 @@ main {
   border-radius: 50px;
   width: 300px;
 }
+.content h3, .content h4 {
+  font-weight: bold
+}
 .contentDark a, .contentDark h3, .contentDark h4 {
-  color: lightgrey
+  color: lightgrey;
+  font-weight: bold
 }
 
 #about .content {
@@ -330,22 +351,8 @@ main {
 form br.hidden {
   display: block;
 }
-form input[type=text] {
-  width: 155px;
-  /* display: flex;
-  justify-content:end; */
-}
-form textarea {
-  width: 215px;
-}
-input[type=submit], input[type=reset] {
-  padding: 10px;
-  border-radius: 50px;
-  border: 0;
-  background-color: white;
-  background-color: whitesmoke;
-  /* background-color: lightgrey; */
-  cursor: pointer;
+.row>.form-floating>label {
+  left: 10px
 }
 /* Pokemon */
 
@@ -362,8 +369,10 @@ input[type=submit], input[type=reset] {
 .gameboyScr {
   margin: 0 auto 0;
   padding: 35px 45px;
-  width: 76%;
-  height: 41%;
+  margin-top: 10px;
+  /* width: 76%; */
+  height: 56%;
+
   background-color: rgb(50, 50, 50);
   border-radius: 30px;
   display: flex;
@@ -433,7 +442,7 @@ input[type=submit], input[type=reset] {
   padding: 3px 0;
   text-align: center;
   /* filter:opacity(50%); */
-  margin: 20px 120px;
+  margin: 5px 120px;
   font-size: 1.25rem;
   border: 2px solid rgb(57, 175, 108);
   border-radius: 25px;
@@ -443,7 +452,7 @@ input[type=submit], input[type=reset] {
 .gameboyCtrl{
   display: flex;
   justify-content: space-between;
-  margin: 0px 20px 30px;
+  margin: 0px 20px 0px;
 }
 .dpad {
   width: 139px;
@@ -522,11 +531,11 @@ color: whitesmoke;
 @media screen and (width > 899px) {
   #home {
       flex-direction: row;
-      width: 560px;
+      width: 580px;
   }
   #homeDark {
       flex-direction: row;
-      width: 560px;
+      width: 580px;
       background-color: rgb(50, 50, 50);
       color: lightgrey;
   }
@@ -535,19 +544,21 @@ color: whitesmoke;
       width: 560px;
   }
   #introTwo h2 {
-      width: 240px;
+      width: 230px;
       margin-left: 0;
+      font-weight: bold;
   }
   #introTwoDark h2 {
-      width: 240px;
+      width: 225px;
       margin-left: 20px;
+      font-weight: bold;
       color: lightgrey
   }
   .content {
-      width: 560px;
+      width: 580px;
   }
   .contentDark {
-      width: 560px;
+      width: 580px;
   }
   form br.hidden {
       display: none;
@@ -585,6 +596,12 @@ color: whitesmoke;
   }
 }
 @media screen and (width > 1919px) {
+  .nav a {
+    font-size: 40px
+  }
+  .navDark a {
+    font-size: 40px
+  }
   #home {
       flex-direction: row;
       width: 1120px;
@@ -600,9 +617,10 @@ color: whitesmoke;
       font-size: 25px;
   }
   #introTwo h2 {
-      width: 580px;
+      width: 540px;
       margin-left: -20px;
       font-size: 40px;
+      font-weight: bold;
   }
   #introTwoDark h2 {
       width: 580px;
@@ -617,7 +635,7 @@ color: whitesmoke;
   }
   nav h1 {
       padding: 18px 0;
-      font-size: 35px;
+      font-size: 50px;
   }
   #navLinksL a {
       font-size: 20px;
