@@ -21,7 +21,7 @@ const LoginForm = (props) => {
         e.preventDefault()
         axios.post('http://localhost:8000/api/users/login', userInfo, {withCredentials: true})
         .then(res=>{
-            console.log(res);
+            // console.log(res);
             if(res.data.user.email === "t@w.com"){
                 navigate("/messages")
             }else{

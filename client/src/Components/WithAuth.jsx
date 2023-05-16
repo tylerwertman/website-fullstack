@@ -1,12 +1,14 @@
-import React from 'react';
-import Home from './Home';
+
+import React, { useEffect, useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import Cookies from 'js-cookie';
+// import Main from './Main';
+import NotFound from './NotFound';
 
 
 const withAuth = (Component) => {
-
+    return () => {
     const cookieValue = Cookies.get('userToken');
-    // console.log(cookieValue)
 
     let isAuthenticated
 
@@ -16,13 +18,10 @@ const withAuth = (Component) => {
         isAuthenticated = false
     }
 
-    return class extends React.Component {
-        render() {
-            if (isAuthenticated) {
-                return <Component {...this.props} />;
-            } else {
-                return <Home />;
-            }
+        if (isAuthenticated) {
+            return <Component />;
+        } else {
+            return <NotFound />;
         }
     };
 };

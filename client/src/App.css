@@ -117,7 +117,7 @@ footer img {
   /* display: none; */
   flex-direction: column;
   position: fixed;
-  top: 60px;
+  top: 57px;
   right: 0%;
   background-color: lightgray;
   width: 40px;
@@ -132,7 +132,7 @@ footer img {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 60px;
+  top: 57px;
   right: 0%;
   background-color: rgb(50, 50, 50);
   width: 40px;
@@ -589,6 +589,10 @@ color: whitesmoke;
       flex-direction: row;
       width: 1120px;
   }
+  #homeDark {
+      flex-direction: row;
+      width: 1120px;
+  }
   #introOne > img {
       width: 520px;
   }
@@ -608,6 +612,9 @@ color: whitesmoke;
   #introTwo img {
       width: 60px;
   }
+  #introTwoDark img {
+      width: 60px;
+  }
   nav h1 {
       padding: 18px 0;
       font-size: 35px;
@@ -624,12 +631,15 @@ color: whitesmoke;
       width: 1120px;
       margin-top: 100px;
   }
+  #homeDark {
+      width: 1120px;
+      margin-top: 100px;
+  }
   .content {
       width: 1120px;
   }
   .contentDark {
       width: 1120px;
-      background-color: darkslategrey;
   }
   .content p {
       font-size: 24px;
@@ -739,10 +749,10 @@ color: whitesmoke;
 }
 @media screen and (377px < width < 565px) {
   .navLinksSE {
-      top: 60px;
+      top: 57px;
   }
   .navLinksSEDark {
-      top: 60px;
+      top: 57px;
   }
 }
 @media screen and (230px < width < 376px) {

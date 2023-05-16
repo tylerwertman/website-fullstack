@@ -9,7 +9,7 @@ const Messages = () => {
     useEffect(() => {
         axios.get(`http://localhost:8000/api/messages`)
         .then(res => {
-            console.log(res)
+            // console.log(res)
             setMsgList(res.data.message)
         })
         .catch(err => {
