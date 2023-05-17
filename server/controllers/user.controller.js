@@ -26,6 +26,7 @@ module.exports= {
         try{
             const user = await User.findOne({email: req.body.email})
             if (user){
+                console.log(User)
                 const passwordMatch = await bcrypt.compare(req.body.password, user.password)
                 if(passwordMatch){
                     const userToken = jwt.sign({_id:user.id, email:user.email, fName:user.fName}, secret, {expiresIn: "1d"});
@@ -37,12 +38,12 @@ module.exports= {
                 res.status(400).json({msg: "Invalid login attempt"})
             }
         }catch(err){
-            console.log(err);
+            console.log(User);
             return res.status(400).json(err)
         }
     },
     logout: (req, res) => {
-        res.clearCookie("userToken").json({message: "Logout success!"});
+        res.clearCookie("userToken").json({msg: "Logout success!"});
     }
 }
 

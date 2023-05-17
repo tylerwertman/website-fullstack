@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-// import jwtdecode from 'jwt-decode'
+import React, { useEffect } from 'react'
 import Cookies from 'js-cookie'
 const Footer = (props) => {
   const { darkMode, setDarkMode } = props
@@ -12,7 +11,7 @@ const Footer = (props) => {
     setDarkMode(darkModeCookie === "true");
     if (darkModeCookie === "true") document.body.style.background = 'rgb(33, 37, 41)';
     else document.body.style.background = 'white';
-  }, [])
+  })
 
   const colorToggle = () => {
     const updatedDarkMode = !darkMode;

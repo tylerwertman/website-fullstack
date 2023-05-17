@@ -19,9 +19,9 @@ const LoginForm = (props) => {
     }
     const submitHandler = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:8000/api/users/login', userInfo, {withCredentials: true})
+        axios.post('http://localhost:8000/api/users/login', userInfo, {withCredentials:true})
         .then(res=>{
-            // console.log(res);
+            console.log(res);
             if(res.data.user.email === "t@w.com"){
                 navigate("/messages")
             }else{
@@ -43,14 +43,14 @@ const LoginForm = (props) => {
             <div>
                 <form onSubmit={submitHandler}>
                     <h3 className={darkMode?'lightText':null} style={{marginTop:"100px"}}>Login</h3>
-                    {errors.msg ? <p className="text-danger">{errors.msg}</p>: ""}
+                    {errors.msg ? <p className="text-danger">{errors.msg}</p> : null}
                     <div className="form-floating col-md-4 mx-auto mb-3">
-                        <label>Email</label>
-                        <input type="text" className="form-control" name="fName" value={userInfo.fName} onChange={changeHandler} placeholder='First Name'/>
+                        <input type="email" className="form-control" name="email" value={userInfo.email} onChange={changeHandler} placeholder='Email'/>
+                        <label htmlFor='email'>Email</label>
                     </div>
                     <div className="form-floating col-md-4 mx-auto mb-3">
-                        <label>Password</label>
                         <input type="password" className="form-control" name="password" value={userInfo.password} onChange={changeHandler} placeholder='Password'/>
+                        <label htmlFor='password'>Password</label>
                     </div>
                     <div className="form-group">
                         <button type="submit" className='btn btn-success'>Login</button>
