@@ -133,7 +133,7 @@ const WTP = () => {
                     </div>
                 </div>
             </div>
-            <video controls="controls" width="300">
+            <video controls="controls" width="240">
                 <source src={wtp} />
                 {/* <source src={WTP}/> */}
             </video>

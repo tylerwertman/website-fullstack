@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 const LoginForm = (props) => {
-
+    const {darkMode} = props
     const navigate = useNavigate();
     const [errors, setErrors] = useState({})
     const [userInfo, setUserInfo] = useState({
@@ -42,18 +42,18 @@ const LoginForm = (props) => {
             <br/>
             <div>
                 <form onSubmit={submitHandler}>
-                    <h3 style={{marginTop:"60px"}}>Login</h3>
+                    <h3 className={darkMode?'lightText':null} style={{marginTop:"100px"}}>Login</h3>
                     {errors.msg ? <p className="text-danger">{errors.msg}</p>: ""}
-                    <div>
-                        <label className='form-label'>Email</label>
-                        <input type="email" name="email" value={userInfo.email} onChange={changeHandler}/>
+                    <div className="form-floating col-md-4 mx-auto mb-3">
+                        <label>Email</label>
+                        <input type="text" className="form-control" name="fName" value={userInfo.fName} onChange={changeHandler} placeholder='First Name'/>
+                    </div>
+                    <div className="form-floating col-md-4 mx-auto mb-3">
+                        <label>Password</label>
+                        <input type="password" className="form-control" name="password" value={userInfo.password} onChange={changeHandler} placeholder='Password'/>
                     </div>
                     <div className="form-group">
-                        <label className='form-label'>Password</label>
-                        <input type="password" name="password" value={userInfo.password} onChange={changeHandler}/>
-                    </div>
-                    <div className="form-group">
-                        <button type="submit">Login</button>
+                        <button type="submit" className='btn btn-success'>Login</button>
                     </div>
                 </form>
             </div>

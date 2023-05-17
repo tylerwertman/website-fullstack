@@ -44,7 +44,6 @@ nav {
   width: 100%;
   /* padding: 0 20px 0 20px; */
   overflow: hidden;
-  z-index: 100;
 }
 nav, footer {
   background-color: lightgrey;
@@ -54,22 +53,22 @@ nav, footer {
   padding: 0 20px 0 20px;
   box-shadow: 0 0 10px black;
   /* position: fixed; */
+  z-index: 100;
 }
 nav h1 {
   padding: 10px 0;
   font-size: 18px;
   margin-right: 10px;
   font-weight: bold;
+  margin-top: 10px;
 }
-.nav a {
+nav a {
   padding: 10px 0;
-  font-size: 18px;
+  font-size: 17px;
+  margin-top: 10px;
   /* margin-right: 10px; */
 }
 .navDark a {
-  padding: 10px 0;
-  font-size: 18px;
-  /* margin-right: 10px; */
   color: lightgrey;
 }
 .navDark span {
@@ -99,7 +98,7 @@ footer img {
 }
 #navLinksL {
   margin-right: 20px;
-  padding: 10px;
+  /* padding: 10px; */
   display: flex;
 }
 #navLinksL a {
@@ -117,7 +116,7 @@ footer img {
 }
 #navLinksS {
   display: none;
-  margin-right: 50px;
+  /* margin-right: 50px; */
 }
 .navLinksSE {
   /* display: none; */
@@ -126,7 +125,7 @@ footer img {
   top: 57px;
   right: 0%;
   background-color: lightgray;
-  width: 40px;
+  width: 60px;
   align-items: center;
   justify-content: center;
   /* height: 200px; */
@@ -141,7 +140,7 @@ footer img {
   top: 57px;
   right: 0%;
   background-color: rgb(50, 50, 50);
-  width: 40px;
+  width: 60px;
   align-items: center;
   justify-content: center;
   /* height: 200px; */
@@ -311,8 +310,14 @@ main {
   border-radius: 50px;
   width: 300px;
 }
+.contentDark p {
+  color: lightgrey
+}
 .content h3, .content h4 {
   font-weight: bold
+}
+.content a {
+  color: seagreen;
 }
 .contentDark a, .contentDark h3, .contentDark h4 {
   color: lightgrey;
@@ -335,12 +340,12 @@ main {
   color: lightgrey;
 }
 #education li {
-  margin-left: 26.75%;
+  margin-left: 9.75%;
   list-style: square;
   text-align: left;
 }
 #educationDark li {
-  margin-left: 26.75%;
+  margin-left: 9.75%;
   list-style: square;
   text-align: left;
   color: lightgrey
@@ -353,6 +358,9 @@ form br.hidden {
 }
 .row>.form-floating>label {
   left: 10px
+}
+.lightText {
+  color: lightgrey
 }
 /* Pokemon */
 
@@ -582,10 +590,10 @@ color: whitesmoke;
       display: none;
   }
   #education li {
-      margin-left: 37.5%;
+      margin-left: 25.25%;
   }
   #educationDark li {
-      margin-left: 37.5%;
+      margin-left: 25.25%;
       color: lightgrey;
   }
   .gameboy {
@@ -667,10 +675,19 @@ color: whitesmoke;
       color: lightgrey
   }
   #education li {
-      margin-left: 43.75%;
+      margin-left: 38%;
+  }
+  #educationDark li {
+      margin-left: 38%;
   }
 }
 @media screen and (349px < width < 565px) {
+  nav a {
+    /* padding: 10px 0; */
+    font-size: 16px;
+    /* margin-top: 10px; */
+    /* margin-right: 10px; */
+  }
   nav h1 {
       padding: 18px 0;
       font-size: 20px;
@@ -696,7 +713,10 @@ color: whitesmoke;
       top: 10%;
   } */
   #education li {
-      margin-left: 26.75%;
+      margin-left: 9.75%;
+  }
+  #educationDark li {
+      margin-left: 9.75%;
   }
 }
 @media screen and (width < 350px) {
@@ -749,7 +769,10 @@ color: whitesmoke;
       padding: 10px;
   }
   #education li {
-      margin-left: 23.75%;
+      margin-left: 5.75%;
+  }
+  #educationDark li {
+      margin-left: 5.75%;
   }
 }
 
@@ -765,28 +788,28 @@ color: whitesmoke;
       display: none;
   }
 }
-@media screen and (377px < width < 565px) {
+@media screen and (361px < width < 565px) {
   .navLinksSE {
-      top: 57px;
+      top: 79px;
   }
   .navLinksSEDark {
-      top: 57px;
+      top: 79px;
   }
 }
-@media screen and (230px < width < 376px) {
+@media screen and (251px < width < 362px) {
   .navLinksSE {
-      top: 83px;
+      top: 103px;
   }
   .navLinksSEDark {
-      top: 83px;
+      top: 103px;
   }
 }
-@media screen and (width < 231px) {
+@media screen and (width < 252px) {
   .navLinksSE {
-      top: 83px;
+      top: 126px;
   }
   .navLinksSEDark {
-      top: 83px;
+      top: 126px;
   }
 }
 

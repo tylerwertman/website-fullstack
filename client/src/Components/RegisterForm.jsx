@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const RegisterForm = (props) => {
-    const {setLoggedIn, count, setCount} = props
+    const {darkMode} = props
 
     const navigate = useNavigate();
     const [errors, setErrors] = useState({})
     const [userInfo, setUserInfo] = useState({
-        firstName: "",
+        fName: "",
         email: "",
         password: "",
         confirmPassword: ""
@@ -33,10 +33,10 @@ const RegisterForm = (props) => {
         .catch(err=>{
             console.log(`submit errer`, err)
             setErrors({
-                firstName: err.response.data.msg.firstName,
-                email: err.response.data.msg.email,
-                password: err.response.data.msg.password,
-                confirmPassword: err.response.data.msg.confirmPassword
+                fName: err.response.data.errors.fName,
+                email: err.response.data.errors.email,
+                password: err.response.data.errors.password,
+                confirmPassword: err.response.data.errors.confirmPassword
             })
             console.log(errors)
         })
@@ -44,31 +44,31 @@ const RegisterForm = (props) => {
     return (
         <div>
             <br/>
-            <div style={{marginTop:"60px"}}>
+            <div style={{marginTop:"100px"}}>
                 <form onSubmit={submitHandler}>
-                    <h3>Register</h3>
-                    {errors.firstName ? <p style={{color:"red"}}>{errors.firstName}</p>: ""}
-                    <div className="form-group">
-                        <label className='form-label'>First Name</label>
-                        <input type="text" className="form-control" name="firstName" value={userInfo.firstName} onChange={changeHandler}/>
+                    <h3 className={darkMode?'lightText':null}>Register</h3>
+                    <div className="form-floating col-md-4 mx-auto mb-3">
+                        <input type="text" className="form-control" name="fName" value={userInfo.fName} onChange={changeHandler} placeholder='First Name'/>
+                        <label>First Name</label>
+                        {errors.fName ? <p className='text-danger'>{errors.fName.message}</p>: ""}
                     </div>
-                    {errors.email ? <p style={{color:"red"}}>{errors.email}</p>: ""}
-                    <div className="form-group">
-                        <label className='form-label'>Email</label>
-                        <input type="email" className="form-control" name="email" value={userInfo.email} onChange={changeHandler}/>
+                    <div className="form-floating col-md-4 mx-auto mb-3">
+                        <input type="email" className="form-control" name="email" value={userInfo.email} onChange={changeHandler} placeholder='Email'/>
+                        <label>Email</label>
+                        {errors.email ? <p className='text-danger'>{errors.email.message}</p>: ""}
                     </div>
-                    {errors.password ? <p style={{color:"red"}}>{errors.password}</p>: ""}
-                    <div className="form-group">
-                        <label className='form-label'>Password</label>
-                        <input type="password" className="form-control" name="password" value={userInfo.password} onChange={changeHandler}/>
+                    <div className="form-floating col-md-4 mx-auto mb-3">
+                        <input type="password" className="form-control" name="password" value={userInfo.password} onChange={changeHandler}  placeholder='Password'/>
+                        <label>Password</label>
+                        {errors.password ? <p className='text-danger'>{errors.password.message}</p>: ""}
                     </div>
-                    {errors.confirmPassword ? <p style={{color:"red"}}>{errors.confirmPassword}</p>: ""}
-                    <div className="form-group">
-                        <label className='form-label'>Confirm Password</label>
-                        <input type="password" className="form-control" name="confirmPassword" value={userInfo.confirmPassword} onChange={changeHandler}/>
+                    <div className="form-floating col-md-4 mx-auto mb-3">
+                        <input type="password" className="form-control" name="confirmPassword" value={userInfo.confirmPassword} onChange={changeHandler}  placeholder='Confirm Password'/>
+                        <label>Confirm Password</label>
+                        {errors.confirmPassword ? <p className='text-danger'>{errors.confirmPassword.message}</p>: ""}
                     </div>
                     <div className="form-group">
-                        <button type="submit" className='btn btn-primary mt-3'>Register</button>
+                        <button type="submit" className='btn btn-success'>Register</button>
                     </div>
                 </form>
             </div>

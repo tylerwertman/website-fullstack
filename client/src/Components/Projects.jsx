@@ -9,6 +9,8 @@ const Projects = (props) => {
             <h2>Projects</h2>
             <div className={darkMode?"contentDark":"content"}>
                 <a href="http://bookclub.tylerw.xyz"><h3>Book Club</h3></a>
+                <p>Built with: Mongoose, Express, React, Node, Bootstrap</p>
+                <p>Features: CRUD, reg/login, private routes, dark mode</p>
             </div>
             <br/>
             <div className={darkMode?"contentDark":"content"}>

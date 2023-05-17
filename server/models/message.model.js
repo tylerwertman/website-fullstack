@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/;
 
 const MessageSchema = new mongoose.Schema({
-    fname: {
+    fName: {
         type: String,
         required: [true, "Name is required"],
         minlength: [2, "Name must be longer"]
