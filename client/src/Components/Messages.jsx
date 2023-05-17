@@ -26,6 +26,7 @@ const Messages = (props) => {
                         <th className={darkMode?"lightText":null}>Name</th>
                         <th className={darkMode?"lightText":null}>Email</th>
                         <th className={darkMode?"lightText":null}>Message</th>
+                        <th className={darkMode?"lightText":null}>Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,6 +36,7 @@ const Messages = (props) => {
                                 <td className={darkMode?"lightText":null}>{message.fname}</td>
                                 <td className={darkMode?"lightText":null}>{message.email}</td>
                                 <td className={darkMode?"lightText":null}>{message.message}</td>
+                                <td className={darkMode?"lightText":null}>{new Date(message.updatedAt).toLocaleString()}</td>
                             </tr>
                         )})}
                 </tbody>
