@@ -34,6 +34,7 @@ const WTP = () => {
             .catch(error => {
                 console.log(error)
             })
+            // eslint-disable-next-line
     }, [])
 
     const newPoke = () => {
