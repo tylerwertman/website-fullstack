@@ -24,7 +24,7 @@ const Footer = (props) => {
   }
 
   return (
-    <footer className={darkMode ? "footerDark" : ""}>
+    <footer className={darkMode ? "footerDark" : null}>
       <span>© 2023 Tyler Wertman Developments</span>&nbsp;
       <button className={darkMode ? "btn btn-success" : "btn btn-dark"} onClick={colorToggle}>{darkMode ? "☀️" : "🌙"}</button>
     </footer>

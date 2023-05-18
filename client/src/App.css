@@ -362,6 +362,9 @@ form br.hidden {
 .lightText {
   color: lightgrey
 }
+table, th, td {
+  border: 1px solid;
+}
 /* Pokemon */
 
 .gameboy {

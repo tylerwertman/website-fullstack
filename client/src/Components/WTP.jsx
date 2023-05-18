@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import wtp from './images/WTP.mov'
 import axios from 'axios'
 
 const WTP = () => {
-    let rng = Math.floor((Math.random() * 152)+1)
-    
+    let rng = Math.floor((Math.random() * 152) + 1)
+
     //make object with name, id, sprites,
     const [pokeObj, setPokeObj] = useState({
         pName: "",
@@ -18,49 +18,45 @@ const WTP = () => {
     const [isHidden, setIsHidden] = useState(true)
     const [isShiny, setIsShiny] = useState(false)
     const [isFront, setIsFront] = useState(true)
-    const [count, setCount] = useState(0)
-    
+
     useEffect(() => {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${rng}`)
-        .then(response => {
-            // console.log(response.data)
-            // console.log(rng)
-            // const rng = Math.floor(Math.random() * 10)
-            setPokeObj({
-                pName: response.data.name,
-                id: response.data.id,
-                spriteFD: response.data.sprites.front_default,
-                spriteFS: response.data.sprites.front_shiny,
-                spriteBD: response.data.sprites.back_default,
-                spriteBS: response.data.sprites.back_shiny
+            .then(response => {
+                setPokeObj({
+                    pName: response.data.name,
+                    id: response.data.id,
+                    spriteFD: response.data.sprites.front_default,
+                    spriteFS: response.data.sprites.front_shiny,
+                    spriteBD: response.data.sprites.back_default,
+                    spriteBS: response.data.sprites.back_shiny
+                })
             })
-        })
-        .catch(error => {
-            console.log(error)
-        })
-        },[count])
-        
+            .catch(error => {
+                console.log(error)
+            })
+    }, [])
+
     const newPoke = () => {
         // console.log("running newPoke");
-        rng = Math.floor((Math.random() * 152)+1)
+        rng = Math.floor((Math.random() * 152) + 1)
         axios.get(`https://pokeapi.co/api/v2/pokemon/${rng}`)
-        .then(response => {
-            setPokeObj({
-                pName: response.data.name,
-                id: response.data.id,
-                spriteFD: response.data.sprites.front_default,
-                spriteFS: response.data.sprites.front_shiny,
-                spriteBD: response.data.sprites.back_default,
-                spriteBS: response.data.sprites.back_shiny
+            .then(response => {
+                setPokeObj({
+                    pName: response.data.name,
+                    id: response.data.id,
+                    spriteFD: response.data.sprites.front_default,
+                    spriteFS: response.data.sprites.front_shiny,
+                    spriteBD: response.data.sprites.back_default,
+                    spriteBS: response.data.sprites.back_shiny
+                })
+                setIsHidden(true)
+                setIsFront(true)
+                setIsShiny(false)
+                // setImgSrc(spriteFD)
             })
-            setIsHidden(true)
-            setIsFront(true)
-            setIsShiny(false)
-            // setImgSrc(spriteFD)
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     const revealPoke = () => {
@@ -69,17 +65,17 @@ const WTP = () => {
     }
 
     const shinyPoke = () => {
-        if(!isHidden && !isShiny) setIsShiny(!isShiny)
+        if (!isHidden && !isShiny) setIsShiny(!isShiny)
     }
     const defaultPoke = () => {
-        if(!isHidden && isShiny) setIsShiny(!isShiny)
+        if (!isHidden && isShiny) setIsShiny(!isShiny)
     }
 
     const backPoke = () => {
-        if(!isHidden && !isFront) setIsFront(!isFront)
+        if (!isHidden && !isFront) setIsFront(!isFront)
     }
     const frontPoke = () => {
-        if(!isHidden && isFront) setIsFront(!isFront)
+        if (!isHidden && isFront) setIsFront(!isFront)
     }
 
     const capitalize = (str) => {
@@ -95,10 +91,10 @@ const WTP = () => {
                     <div className="js" >
                         <img src={
                             !isShiny && isFront ? pokeObj.spriteFD :
-                            isShiny && isFront ? pokeObj.spriteFS :
-                            !isShiny && !isFront ? pokeObj.spriteBD :
-                            isShiny && !isFront ? pokeObj.spriteBS : null
-                            } className={isHidden ? "sillhouette" : ""} alt="sillhouette" />
+                                isShiny && isFront ? pokeObj.spriteFS :
+                                    !isShiny && !isFront ? pokeObj.spriteBD :
+                                        isShiny && !isFront ? pokeObj.spriteBS : null
+                        } className={isHidden ? "sillhouette" : ""} alt="sillhouette" />
                         <p id="textBox">{isHidden ? "Who's that Pokemon?" : isShiny ? `It's ${capitalize(pokeObj.pName)} (shiny)` : `It's ${capitalize(pokeObj.pName)}`}</p>
                     </div>
                     <br />

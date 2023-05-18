@@ -22,8 +22,8 @@ module.exports.updateMessage = (req, res) => {
 }
 module.exports.deleteMessage = (req, res) => {
     message.findByIdAndDelete(req.params.id)
-    .then(result => res.json({result: result}))
-    .catch(err => res.status(400).json({message: "Something went worng deleting a message", error: err}))
+        .then(result => res.json({ result: result }))
+        .catch(err => res.status(400).json({ message: "Something went worng deleting a message", error: err }))
 }
 module.exports.deleteAllMessages = (req, res) => {
     message.deleteMany()

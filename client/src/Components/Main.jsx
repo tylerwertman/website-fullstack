@@ -6,14 +6,14 @@ import Education from './Education'
 import Contact from './Contact'
 
 const Main = (props) => {
-    const {darkMode} = props
+    const { darkMode } = props
     return (
         <main>
-            <Home darkMode={darkMode}/>
-            <About darkMode={darkMode}/>
-            <Projects darkMode={darkMode}/>
-            <Education darkMode={darkMode}/>
-            <Contact darkMode={darkMode}/>
+            <Home darkMode={darkMode} />
+            <About darkMode={darkMode} />
+            <Projects darkMode={darkMode} />
+            <Education darkMode={darkMode} />
+            <Contact darkMode={darkMode} />
         </main>
     )
 }
