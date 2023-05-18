@@ -94,7 +94,7 @@ const WTP = () => {
                                 isShiny && isFront ? pokeObj.spriteFS :
                                     !isShiny && !isFront ? pokeObj.spriteBD :
                                         isShiny && !isFront ? pokeObj.spriteBS : null
-                        } className={isHidden ? "sillhouette" : ""} alt="sillhouette" />
+                        } className={isHidden ? "sillhouette" : null} alt="sillhouette" />
                         <p id="textBox">{isHidden ? "Who's that Pokemon?" : isShiny ? `It's ${capitalize(pokeObj.pName)} (shiny)` : `It's ${capitalize(pokeObj.pName)}`}</p>
                     </div>
                     <br />
