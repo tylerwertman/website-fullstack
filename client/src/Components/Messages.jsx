@@ -45,7 +45,7 @@ const Messages = (props) => {
                     {msgList.map((message) => {
                         return (
                             <tr key={message._id}>
-                                <td className={darkMode ? "lightText" : null}>{message.fname}</td>
+                                <td className={darkMode ? "lightText" : null}>{message.fName}</td>
                                 <td className={darkMode ? "lightText" : null}>{message.email}</td>
                                 <td className={darkMode ? "lightText" : null}>{message.message}</td>
                                 <td className={darkMode ? "lightText" : null}>{new Date(message.updatedAt).toLocaleString()}</td>
