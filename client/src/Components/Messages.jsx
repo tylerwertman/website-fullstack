@@ -11,6 +11,7 @@ const Messages = (props) => {
         axios.get(`http://localhost:8000/api/messages`)
             .then(res => {
                 setMsgList(res.data.message)
+                console.log(res.data.message)
             })
             .catch(err => {
                 console.log(err)
