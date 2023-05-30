@@ -7,17 +7,17 @@ const Projects = (props) => {
     return (
         <div className="section" id={darkMode ? "projectsDark" : "projects"}>
             <h2>Projects</h2>
-            <div className={darkMode ? "contentDark" : "content"}>
+            <div className={darkMode ? "contentDark mb-3" : "content mb-3"}>
                 <a href="http://bookclub.tylerw.xyz"><h3>Book Club</h3></a>
                 <p>Built with: Mongoose, Express, React, Node, Bootstrap</p>
                 <p>Features: CRUD, reg/login, protected routes, dark mode, table sorting, many to many relationships</p>
             </div>
-            <div className={darkMode ? "contentDark" : "content"}>
+
+            <div className={darkMode ? "contentDark mb-3" : "content mb-3"}>
                 <a href="http://brightideas.tylerw.xyz"><h3>Bright Ideas</h3></a>
                 <p>Built with: Mongoose, Express, React, Node, Bootstrap</p>
                 <p>Features: CRUD, reg/login, protected routes, dark mode, many to many relationships</p>
             </div>
-            <br />
             <div className={darkMode ? "contentDark" : "content"}>
                 <WTP />
             </div>
