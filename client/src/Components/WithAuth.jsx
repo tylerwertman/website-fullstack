@@ -5,7 +5,7 @@ import NotFound from './NotFound';
 
 const withAuth = (Component) => {
     const WithAuthComponent = (props) => {
-        const { darkMode } = props;
+        // const { darkMode } = props;
         const cookieValue = Cookies.get('userToken');
 
         let isAuthenticated
