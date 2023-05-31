@@ -5,7 +5,7 @@ const Projects = (props) => {
     const { darkMode } = props
 
     return (
-        <div className="section" id={darkMode ? "projectsDark" : "projects"}>
+        <div className={darkMode ? "section projectsDark" : "section projects"} id="projects">
             <h2>Projects</h2>
             <div className={darkMode ? "contentDark mb-3" : "content mb-3"}>
                 <a href="http://bookclub.tylerw.xyz"><h3>Book Club</h3></a>

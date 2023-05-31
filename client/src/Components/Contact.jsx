@@ -38,7 +38,7 @@ const Contact = (props) => {
             })
     }
     return (
-        <div className="section" id={darkMode ? "contactDark" : "contact"} style={{ marginBottom: "100px" }}>
+        <div className={darkMode ? "section contactDark" : "section contact"} id="contact" style={{ marginBottom: "100px" }}>
             <h2>Contact</h2>
             <div className={darkMode ? "contentDark" : "content"} id="form" style={{ padding: "40px" }}>
                 <form onSubmit={submitHandler}>

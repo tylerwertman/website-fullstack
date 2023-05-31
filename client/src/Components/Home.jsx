@@ -23,7 +23,7 @@ const Home = (props) => {
     }
 
     return (
-        <div className="section" id={darkMode ? "homeDark" : "home"}>
+        <div className={darkMode ? "section homeDark" : "section home"} id="home">
             <div id="introOne">
                 <img src={me} alt="tyler, website owner" />
                 <h2>Tyler Wertman</h2><br />

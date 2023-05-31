@@ -4,7 +4,7 @@ const Education = (props) => {
     const { darkMode } = props
 
     return (
-        <div className="section" id={darkMode ? "educationDark" : "education"}>
+        <div className={darkMode ? "section educationDark" : "section education"} id="education">
             <h2>Education</h2>
             <div className={darkMode ? "contentDark" : "content"}>
                 <h4>CodingDojo Online - 2023</h4>
