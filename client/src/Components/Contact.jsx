@@ -44,18 +44,18 @@ const Contact = (props) => {
                 <form onSubmit={submitHandler}>
                     <div className="row">
                         <div class="form-floating mb-3 col">
-                            <input type="text" class="form-control col" name="fName" value={contactForm.fName} onChange={changeHandler} placeholder="Name" />
+                            <input type="text" class="form-control custom-input col" name="fName" value={contactForm.fName} onChange={changeHandler} placeholder="Name" />
                             <label htmlFor="fName" style={{ color: "darkslategrey" }}>Name</label>
                             {errors.fName ? <p className='text-danger'>{errors.fName.message}</p> : null}
                         </div>
                         <div class="form-floating mb-3 col">
-                            <input type="email" class="form-control" name="email" value={contactForm.email} onChange={changeHandler} placeholder="Email" />
+                            <input type="email" class="form-control custom-input" name="email" value={contactForm.email} onChange={changeHandler} placeholder="Email" />
                             <label htmlFor="email" style={{ color: "darkslategrey" }}>Email</label>
                             {errors.email ? <p className='text-danger'>{errors.email.message}</p> : null}
                         </div>
                     </div>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" name="message" value={contactForm.message} onChange={changeHandler} placeholder="Leave a comment here" style={{ height: "100px" }}></textarea>
+                        <textarea class="form-control custom-input" name="message" value={contactForm.message} onChange={changeHandler} placeholder="Leave a comment here" style={{ height: "100px" }}></textarea>
                         <label htmlFor="message" style={{ color: "darkslategrey" }}>Message</label>
                         {errors.message ? <p className='text-danger'>{errors.message.message}</p> : null}
                     </div>

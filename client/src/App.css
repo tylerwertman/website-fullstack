@@ -358,6 +358,10 @@ form br.hidden {
 .row>.form-floating>label {
   left: 10px
 }
+.custom-input:focus {
+  border-color: #80ff8d;
+  box-shadow: 0 0 0 0.2rem rgba(0, 255, 13, 0.25);
+}
 .lightText {
   color: lightgrey
 }
