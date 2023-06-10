@@ -11,8 +11,8 @@ const Projects = (props) => {
                 <a href="http://crudApps.tylerw.xyz"><h3>CRUD Apps</h3></a>
                 <p>What is CRUD? CRUD is an acronym for Create, Read, Update, Delete.</p>
                 <p>In the following apps, a user will be able to create, read, update and delete table items</p>
-                <p>Built with: Mongoose, Express, React, Node, Socket.IO, Bootstrap & various React libraries</p>
-                <p>Features: CRUD, reg/login, private routes, dark mode, many to many relationships, real time updates & more</p>
+                <p>Built with: Mongoose, Express, React, Node, Socket.IO, Multer, Bootstrap & various React libraries</p>
+                <p>Features: CRUD, reg/login, private routes, dark mode, many to many relationships, real time updates, & file upload</p>
             </div>
             <div className={darkMode ? "contentDark" : "content"}>
                 <WTP />
