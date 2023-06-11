@@ -30,6 +30,7 @@ const WTP = () => {
                     spriteBD: response.data.sprites.back_default,
                     spriteBS: response.data.sprites.back_shiny
                 })
+                console.log(response.data)
             })
             .catch(error => {
                 console.log(error)

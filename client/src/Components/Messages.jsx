@@ -8,7 +8,7 @@ const Messages = (props) => {
     const [msgList, setMsgList] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/messages`)
+        axios.get(`https://localhost:8000/api/messages`)
             .then(res => {
                 setMsgList(res.data.message)
                 console.log(res.data.message)
@@ -19,7 +19,7 @@ const Messages = (props) => {
     }, [])
 
     const deleteMessage = (message) => {
-        axios.delete(`http://localhost:8000/api/messages/${message._id}`)
+        axios.delete(`https://localhost:8000/api/messages/${message._id}`)
             .then(res => {
                 console.log('message deleted', res)
                 const filteredMsgList = msgList.filter(msg => msg._id !== message._id)
