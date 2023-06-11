@@ -24,7 +24,7 @@ const RegisterForm = (props) => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        axios.post('https://localhost:8000/api/users/register', userInfo)
+        axios.post('http://localhost:8000/api/users/register', userInfo)
             .then(res => {
                 // console.log(res);
                 navigate("/admin-login")

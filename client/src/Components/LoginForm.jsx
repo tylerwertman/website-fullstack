@@ -19,7 +19,7 @@ const LoginForm = (props) => {
     }
     const submitHandler = (e) => {
         e.preventDefault()
-        axios.post('https://localhost:8000/api/users/login', userInfo, { withCredentials: true })
+        axios.post('http://localhost:8000/api/users/login', userInfo, { withCredentials: true })
             .then(res => {
                 console.log(res);
                 if (res.data.user.email === "t@w.com") {

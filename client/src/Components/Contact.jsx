@@ -14,7 +14,7 @@ const Contact = (props) => {
     }
     const submitHandler = (e) => {
         e.preventDefault()
-        axios.post('https://localhost:8000/api/messages', contactForm)
+        axios.post('http://localhost:8000/api/messages', contactForm)
             .then(res => {
                 setContactForm({
                     fName: "",
