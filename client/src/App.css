@@ -103,7 +103,7 @@ footer img {
 }
 #navLinksL a {
   display: flex;
-  align-items:flex-end;
+  align-items:flex-start;
   padding: 10px;
   border-radius: 15px;
   font-size: 14px;
