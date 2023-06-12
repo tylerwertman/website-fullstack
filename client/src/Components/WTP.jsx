@@ -3,7 +3,7 @@ import wtp from './images/WTP.mov'
 import axios from 'axios'
 
 const WTP = () => {
-    let rng = Math.floor((Math.random() * 439) + 1)
+    let rng = Math.floor((Math.random() * 492) + 1)
 
     //make object with name, id, sprites,
     const [pokeObj, setPokeObj] = useState({
@@ -49,7 +49,7 @@ const WTP = () => {
 
     const newPoke = () => {
         // console.log("running newPoke");
-        rng = Math.floor((Math.random() * 439) + 1)
+        rng = Math.floor((Math.random() * 492) + 1)
         axios.get(`https://pokeapi.co/api/v2/pokemon/${rng}`)
             .then(response => {
                 console.log(pokeObj)
