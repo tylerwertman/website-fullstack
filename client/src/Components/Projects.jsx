@@ -9,10 +9,10 @@ const Projects = (props) => {
             <h2>Projects</h2>
             <div className={darkMode ? "contentDark mb-3" : "content mb-3"}>
                 <a href="https://crudApps.tylerw.xyz"><h3>CRUD Apps</h3></a>
-                <h5>What is CRUD? CRUD is Create, Read, Update, Delete.</h5>
+                <h5 style={{fontWeight:"bolder"}}>What is CRUD? CRUD is Create, Read, Update, Delete.</h5>
                 <h5>In the following apps, a user will be able to create, read, update and delete database objects</h5>
                 <p>Built with: Mongoose, Express, React, Node, Socket.IO, Multer, Bootstrap & various React libraries</p>
-                <p>Features: CRUD, registration & login with JSON web tokens & cookies, protected routes, many to many relationships, real time updates, & file upload</p>
+                <p>Features: CRUD, registration, login & protected routes with JSON web tokens & cookies, many to many relationships, real time updates, & file upload</p>
             </div>
             <div className={darkMode ? "contentDark" : "content"}>
                 <WTP />
