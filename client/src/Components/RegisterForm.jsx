@@ -44,7 +44,7 @@ const RegisterForm = (props) => {
     return (
         <div>
             <br />
-            <div style={{ marginTop: "100px" }}>
+            <div style={{ marginTop: "150px" }}>
                 <form onSubmit={submitHandler}>
                     <h3 className={darkMode ? 'lightText' : null}>Register</h3>
 

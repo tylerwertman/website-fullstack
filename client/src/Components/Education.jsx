@@ -10,7 +10,7 @@ const Education = (props) => {
                 <h4>CodingDojo Online - 2023</h4>
                 <ul>
                     <li>Web Fundamentals</li>
-                    <li>MERN Javascript Stack</li>
+                    <li>Certification of Full Stack Development in MERN</li>
                 </ul>
             </div>
         </div>

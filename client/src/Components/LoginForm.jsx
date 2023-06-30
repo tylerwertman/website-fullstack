@@ -42,7 +42,7 @@ const LoginForm = (props) => {
             <br />
             <div>
                 <form onSubmit={submitHandler}>
-                    <h3 className={darkMode ? 'lightText' : null} style={{ marginTop: "100px" }}>Login</h3>
+                    <h3 className={darkMode ? 'lightText' : null} style={{ marginTop: "150px" }}>Login</h3>
                     {errors.msg ? <p className="text-danger">{errors.msg}</p> : null}
                     <div className="form-floating col-md-4 mx-auto mb-3">
                         <input type="email" className="form-control" name="email" value={userInfo.email} onChange={changeHandler} placeholder='Email' />
