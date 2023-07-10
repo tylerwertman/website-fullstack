@@ -37,3 +37,5 @@ jobs:
         cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client
         grep -rl localhost ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client | xargs sed -i 's/http:\/\/localhost:8000//g'
     - run: cp ~/.env ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/server/.env
+    - run: pm2 restart all
+    - run: sudo service nginx restart
