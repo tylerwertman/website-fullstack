@@ -35,4 +35,4 @@ jobs:
         npm run build
     - run: |
         cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client
-        sudo grep -rl localhost /var/www/html | xargs sed -i 's/http:\/\/localhost:8000//g'
+        grep -rl localhost /var/www/html | xargs sed -i 's/http:\/\/localhost:8000//g'
