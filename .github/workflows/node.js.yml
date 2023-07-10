@@ -26,8 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
-    - name: Install dependencies
-      run: cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client; npm ci
-    - name: Run build
-      run: cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client; npm run build
+    - run: npm i
+    - run: cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client; npm i
+    - run: cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client; npm run build
