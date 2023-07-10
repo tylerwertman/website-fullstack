@@ -28,9 +28,6 @@ jobs:
         cache: 'npm'
         
     - name: Install dependencies
-      run: npm install
-      working-directory: website-fullstack/website-fullstack/website-fullstack/website-fullstack/client
-
+      run: cd website-fullstack/website-fullstack/website-fullstack/website-fullstack/client; npm install
     - name: Run build
-      run: npm run build
-      working-directory: website-fullstack/website-fullstack/website-fullstack/website-fullstack/client
+      run: cd website-fullstack/website-fullstack/website-fullstack/website-fullstack/client; npm run build
