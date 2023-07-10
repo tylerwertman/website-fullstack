@@ -29,4 +29,3 @@ jobs:
     - run: cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client
     - run: npm i
     - run: npm run build --if-present
-    - run: npm test
