@@ -33,6 +33,3 @@ jobs:
     - run: |
         cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client
         npm run build
-    - run: |
-        cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client
-        grep -rl localhost /var/www/html | xargs sed -i 's/http:\/\/localhost:8000//g'
