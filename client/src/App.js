@@ -1,18 +1,16 @@
 import './App.css';
-import Nav from './Components/Nav';
-import Main from './Components/Main';
-import Footer from './Components/Footer';
-import NotFound from './Components/NotFound';
+import Nav from './components/Nav';
+import Main from './components/Main';
+import Footer from './components/Footer';
+import NotFound from './components/NotFound';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react'
-import LoginForm from './Components/LoginForm';
-import RegisterForm from './Components/RegisterForm';
-import Messages from './Components/Messages';
-import WithAuth from './Components/WithAuth';
+import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
+import Messages from './components/Messages';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
-
 
   return (
     <BrowserRouter>
@@ -26,7 +24,6 @@ function App() {
           <Route path="/*" element={<NotFound darkMode={darkMode} />} />
         </Routes>
         <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
-        <WithAuth darkMode={darkMode} />
       </div>
     </BrowserRouter>
   );
