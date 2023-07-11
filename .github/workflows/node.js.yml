@@ -26,17 +26,28 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm i
-    - run: |
-        cd ~/action-runner/website-fullstack/website-fullstack/website-fullstack/client
+    - name: cd server & npm i
+      run: |
+        cd ~/action-runner/_work/website-fullstack/website-fullstack/server  
         npm i
-    - run: |
-        cd ~/action-runner/website-fullstack/website-fullstack/website-fullstack/client
+    - name: cd client & npm i
+      run: |
+        cd ~/action-runner/_work/website-fullstack/website-fullstack/client
+        npm i
+    - name: cd client & npm run build
+      run: |
+        cd ~/action-runner/_work/website-fullstack/website-fullstack/client
         npm run build
-    - run: |
-        cd ~/action-runner/website-fullstack/website-fullstack/website-fullstack/client
-        mv ~/action-runner/website-fullstack/website-fullstack/website-fullstack/client/build /var/www/html
-        grep -rl localhost ~/action-runner/website-fullstack/website-fullstack/website-fullstack/client | xargs sed -i 's/http:\/\/localhost:8000//g'
-    - run: cp ~/.env ~/action-runner/website-fullstack/website-fullstack/website-fullstack/server/.env
-    - run: pm2 restart all
-    - run: sudo service nginx restart
+    - name: stop nginx
+      run: sudo service nginx stop
+    - name: rm /var/www/html & mv build
+      run: |
+        sudo rm -rf /var/www/html
+        mv ~/action-runner/_work/website-fullstack/website-fullstack/client/build /var/www/html
+        sudo grep -rl localhost ~/action-runner/_work/website-fullstack/website-fullstack/client | xargs sed -i 's/http:\/\/localhost:8000//g'
+    - name: copy .env from ~ into server
+      run: cp ~/.env ~/action-runner/_work/website-fullstack/website-fullstack/server/.env
+    - name: restart pm2 & nginx
+      run: |
+        pm2 restart all
+        sudo service nginx restart
