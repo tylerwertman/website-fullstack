@@ -28,7 +28,7 @@ jobs:
         cache: 'npm'
     - name: cd server & npm i
       run: |
-        cd ~/action-runner/_work/website-fullstack/website-fullstack/server  
+        cd ~/action-runner/_work/website-fullstack/website-fullstack/  
         npm i
     - name: cd client & npm i
       run: |
