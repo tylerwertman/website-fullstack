@@ -27,11 +27,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: server npm i
-      run: npm ci
+      run: npm i
     - name: cd client & npm i
       run: |
         cd /home/tyler/actions-runner/_work/website-fullstack/website-fullstack/client
-        npm ci
+        npm i
     - name: cd client & npm run build
       run: |
         cd /home/tyler/actions-runner/_work/website-fullstack/website-fullstack/client
