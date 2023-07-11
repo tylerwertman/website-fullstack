@@ -30,11 +30,11 @@ jobs:
       run: npm i
     - name: cd client & npm i
       run: |
-        cd ~/action-runner/_work/website-fullstack/website-fullstack/client
+        cd /home/tyler/actions-runner/_work/website-fullstack/website-fullstack/client
         npm i
     - name: cd client & npm run build
       run: |
-        cd ~/action-runner/_work/website-fullstack/website-fullstack/client
+        cd /home/tyler/actions-runner/_work/website-fullstack/website-fullstack/client
         npm run build
     - name: stop nginx
       run: sudo service nginx stop
@@ -44,7 +44,7 @@ jobs:
         mv ~/action-runner/_work/website-fullstack/website-fullstack/client/build /var/www/html
         sudo grep -rl localhost ~/action-runner/_work/website-fullstack/website-fullstack/client | xargs sed -i 's/http:\/\/localhost:8000//g'
     - name: copy .env from ~ into server
-      run: cp ~/.env ~/action-runner/_work/website-fullstack/website-fullstack/server/.env
+      run: cp ~/.env /home/tyler/action-runner/_work/website-fullstack/website-fullstack/server/.env
     - name: restart pm2 & nginx
       run: |
         pm2 restart all
