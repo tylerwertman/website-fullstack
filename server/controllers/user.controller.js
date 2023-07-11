@@ -1,6 +1,6 @@
 const User = require("../models/user.model")
-const jwt = require("jsonwebtoken");
-const secret = process.env.FIRST_SECRET_KEY;
+const jwt = require("jsonwebtoken")
+const secret = process.env.FIRST_SECRET_KEY
 const bcrypt = require('bcrypt')
 
 
@@ -12,7 +12,7 @@ module.exports= {
                 res.status(400).json({msg: "Email exists"})
             }else {
                 const newUser = await User.create(req.body);
-                const userToken = jwt.sign({_id:newUser.id, email:newUser.email, fName:newUser.fName}, secret, {expiresIn: "1d"});
+                const userToken = jwt.sign({_id:newUser.id, email:newUser.email, fName:newUser.fName}, secret, {expiresIn: "1d"})
                 res.cookie("userToken", userToken, {httpOnly:false}).json({msg: "Create new userToken success!", user: newUser})
                 // console.log(userToken);
                 // res.json({msg: "success!", user: newUser})
@@ -26,7 +26,7 @@ module.exports= {
         try{
             const user = await User.findOne({email: req.body.email})
             if (user){
-                console.log(User)
+                console.log(user)
                 const passwordMatch = await bcrypt.compare(req.body.password, user.password)
                 if(passwordMatch){
                     const userToken = jwt.sign({_id:user.id, email:user.email, fName:user.fName}, secret, {expiresIn: "1d"});
@@ -38,7 +38,7 @@ module.exports= {
                 res.status(400).json({msg: "Invalid login attempt"})
             }
         }catch(err){
-            console.log(User);
+            console.log(err);
             return res.status(400).json(err)
         }
     },

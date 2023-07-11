@@ -28,15 +28,15 @@ jobs:
         cache: 'npm'
     - run: npm i
     - run: |
-        cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client
+        cd ~/action-runner/website-fullstack/website-fullstack/website-fullstack/client
         npm i
     - run: |
-        cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client
+        cd ~/action-runner/website-fullstack/website-fullstack/website-fullstack/client
         npm run build
     - run: |
-        cd ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client
-        cp -r ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client/build /var/www/html
-        grep -rl localhost ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/client | xargs sed -i 's/http:\/\/localhost:8000//g'
-    - run: cp ~/.env ~/website-fullstack/website-fullstack/website-fullstack/website-fullstack/server/.env
+        cd ~/action-runner/website-fullstack/website-fullstack/website-fullstack/client
+        mv ~/action-runner/website-fullstack/website-fullstack/website-fullstack/client/build /var/www/html
+        grep -rl localhost ~/action-runner/website-fullstack/website-fullstack/website-fullstack/client | xargs sed -i 's/http:\/\/localhost:8000//g'
+    - run: cp ~/.env ~/action-runner/website-fullstack/website-fullstack/website-fullstack/server/.env
     - run: pm2 restart all
     - run: sudo service nginx restart
