@@ -26,10 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: cd server & npm i
-      run: |
-        cd ~/action-runner/_work/website-fullstack/website-fullstack/  
-        npm i
+    - name: server npm i
+      run: npm i
     - name: cd client & npm i
       run: |
         cd ~/action-runner/_work/website-fullstack/website-fullstack/client
