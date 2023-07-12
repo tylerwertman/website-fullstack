@@ -21,7 +21,6 @@ function App() {
           <Route path="/admin-login" element={<LoginForm darkMode={darkMode} />} />
           <Route path="/admin-register" element={<RegisterForm darkMode={darkMode} />} />
           <Route path="/messages" element={<Messages darkMode={darkMode} />} />
-          <Route path="/resume.pdf" />
           <Route path="/*" element={<NotFound darkMode={darkMode} />} />
         </Routes>
         <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
