@@ -38,11 +38,11 @@ jobs:
         npm run build
     - name: stop nginx
       run: sudo service nginx stop
-    - name: rm /var/www/html & mv build
+    - name: rm /var/www/html, mv build & grep
       run: |
         sudo rm -rf /var/www/html
         mv /home/tyler/action-runner/_work/website-fullstack/website-fullstack/client/build /var/www/html
-        sudo grep -rl localhost /home/tyler/action-runner/_work/website-fullstack/website-fullstack/client | xargs sed -i 's/http:\/\/localhost:8000//g'
+        sudo grep -rl localhost /var/www/html | xargs sed -i 's/http:\/\/localhost:8000//g'
     - name: copy .env from ~ into server
       run: cp ~/.env /home/tyler/action-runner/_work/website-fullstack/website-fullstack/server/.env
     - name: restart pm2 & nginx
