@@ -9,8 +9,12 @@ const Footer = (props) => {
     const darkModeCookie = Cookies.get('darkMode');
     // console.log(darkModeCookie, darkMode)
     setDarkMode(darkModeCookie === "true");
-    if (darkModeCookie === "true") document.body.style.background = 'rgb(33, 37, 41)';
-    else document.body.style.background = 'white';
+
+    if (darkModeCookie === "false") document.body.classList.add('change')
+    else document.body.classList.remove('change')
+
+    // if (darkModeCookie === "true") document.body.style.background = 'rgb(33, 37, 41)';
+    // else document.body.style.background = 'white';
   })
 
   const colorToggle = () => {
@@ -18,8 +22,11 @@ const Footer = (props) => {
     setDarkMode(updatedDarkMode);
     Cookies.set('darkMode', updatedDarkMode.toString(), { expires: 7 });
 
-    if (updatedDarkMode) document.body.style.background = 'rgb(33, 37, 41)';
-    else document.body.style.background = 'white';
+    if (!updatedDarkMode) document.body.classList.add('change')
+    else document.body.classList.remove('change')
+
+    // if (updatedDarkMode) document.body.style.background = 'rgb(33, 37, 41)';
+    // else document.body.style.background = 'white';
 
   }
 
