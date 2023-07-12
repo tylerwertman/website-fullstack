@@ -6,7 +6,7 @@ const About = (props) => {
         <div className={darkMode ? "section aboutDark" : "section about"} id="about">
             <h2>About</h2>
             <div className={darkMode ? "contentDark" : "content"}>
-                <p>I was born and raised on Long Island, New York and currently reside in South Florida. My admiration for the cornerstone between form and function runs deep. In tandem with my fascination for learning how things work, my passion for both web development and 3D printing began. In my downtime, I enjoy hiking mountains, sports, electrical projects, reading, and creative writing.</p>
+                <p>I was born and raised on Long Island, New York and currently reside in South Florida. My admiration for the cornerstone between form and function runs deep. In tandem with my fascination for learning how things work, my passion for web development began. When I'm not coding, you can find me longboarding at the park, hiking mountains, watching the New York Mets or reading.</p>
             </div>
         </div>
     )
