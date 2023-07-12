@@ -5,7 +5,7 @@ const Contact = (props) => {
     const { darkMode } = props
     const [contactForm, setContactForm] = useState({ fName: "", email: "", message: "" })
     const [errors, setErrors] = useState({})
-
+    const [msgSent, setMsgSent] = useState(false)
     const changeHandler = (e) => {
         setContactForm({
             ...contactForm,
@@ -26,6 +26,7 @@ const Contact = (props) => {
                     email: "",
                     message: ""
                 })
+                setMsgSent(true)
             })
             .catch(err => {
                 console.log(`submit errer`, err)
@@ -41,7 +42,8 @@ const Contact = (props) => {
         <div className={darkMode ? "section contactDark" : "section contact"} id="contact" style={{ marginBottom: "100px" }}>
             <h2>Contact</h2>
             <div className={darkMode ? "contentDark" : "content"} id="form" style={{ padding: "40px" }}>
-                <form onSubmit={submitHandler}>
+                <form onSubmit={submitHandler} onClick={()=>setMsgSent(false)}>
+                {msgSent ? <p className='text-success'>Message sent!</p> : null}
                     <div className="row">
                         <div className="form-floating mb-3 col">
                             <input type="text" className="form-control custom-input col" name="fName" value={contactForm.fName} onChange={changeHandler} placeholder="Name" />
