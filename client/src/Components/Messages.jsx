@@ -31,7 +31,7 @@ const Messages = (props) => {
     }
     return (
         <div style={{ marginTop: "200px" }}>
-            <h5 className={darkMode ? "lightText" : null}>Messsages</h5>
+            <h3 className={darkMode ? "lightText" : null} style={{textAlign:"center"}}>Messsages</h3>
             <table className={darkMode ? "col-md-6 mx-auto mt-3 lightText" : "col-md-6 mx-auto mt-3"}>
                 <thead>
                     <tr>
