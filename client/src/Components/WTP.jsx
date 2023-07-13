@@ -3,7 +3,7 @@ import wtp from './images/WTP.mov'
 import axios from 'axios'
 
 const WTP = () => {
-    let rng = Math.floor((Math.random() * 492) + 1)
+    let rng = Math.floor((Math.random() * 386) + 1)
 
     //make object with name, id, sprites,
     const [pokeObj, setPokeObj] = useState({
@@ -49,7 +49,7 @@ const WTP = () => {
 
     const newPoke = () => {
         // console.log("running newPoke");
-        rng = Math.floor((Math.random() * 492) + 1)
+        rng = Math.floor((Math.random() * 386) + 1)
         axios.get(`https://pokeapi.co/api/v2/pokemon/${rng}`)
             .then(response => {
                 console.log(pokeObj)
@@ -124,7 +124,7 @@ const WTP = () => {
                                                     !isShiny && !isFront ? pokeObj.spriteBD :
                                                         isShiny && !isFront ? pokeObj.spriteBS : null
                         } className={isHidden ? "sillhouette" : null} alt="sillhouette" />
-                        <p id="textBox">{isHidden ? "Who's that Pokemon?" : isShiny && isFemale ? `It's ${capitalize(pokeObj.pName)}     (shiny, female)` : isShiny ? `It's ${capitalize(pokeObj.pName)}     (shiny)` : isFemale ? `It's ${capitalize(pokeObj.pName)}     (female)` :`It's ${capitalize(pokeObj.pName)}`}</p>
+                        <p id="textBox">{isHidden ? "Who's that Pokemon?" : isFemale ? `It's ${capitalize(pokeObj.pName)} ♀` :`It's ${capitalize(pokeObj.pName)} ♂`}</p>
                     </div>
                     <br />
                     <p>GAMEBOY <span className="C">C</span><span className="O">O</span><span className="L">L</span><span className="O2">O</span><span className="R">R</span></p>
