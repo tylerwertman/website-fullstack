@@ -49,7 +49,7 @@ const Messages = (props) => {
                                 <td className={darkMode ? "lightText" : null}>{message.fName}</td>
                                 <td className={darkMode ? "lightText" : null}>{message.email}</td>
                                 <td className={darkMode ? "lightText" : null}>{message.message}</td>
-                                <td className={darkMode ? "lightText" : null}>{new Date(message.updatedAt).toLocaleString()}</td>
+                                <td className={darkMode ? "lightText" : null}>{new Date(message.createdAt).toLocaleString()}</td>
                                 <td className={darkMode ? "lightText" : null}><button className="btn btn-danger" onClick={() => deleteMessage(message)}>Delete</button></td>
                             </tr>
                         )

@@ -37,6 +37,13 @@ const Contact = (props) => {
                 })
                 console.log(errors)
             })
+        axios.post('http://localhost:8000/api/postEmail', contactForm)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err, contactForm)
+            })
     }
     return (
         <div className={darkMode ? "section contactDark" : "section contact"} id="contact" style={{ marginBottom: "100px" }}>
