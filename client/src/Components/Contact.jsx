@@ -50,7 +50,7 @@ const Contact = (props) => {
             <h2>Contact</h2>
             <div className={darkMode ? "contentDark" : "content"} id="form" style={{ padding: "40px" }}>
                 <form onSubmit={submitHandler} onClick={() => setMsgSent(false)}>
-                    {msgSent ? <h4 style={{ color: darkMode ? "lightgreen" : "green" }}>Message sent!</h4> : null}
+                    {msgSent ? <h4 style={{ color: darkMode ? "lightgreen" : "green" }}>Message sent! (Check spam folder!)</h4> : null}
                     <br />
                     <div className="row">
                         <div className="form-floating mb-3 col">
