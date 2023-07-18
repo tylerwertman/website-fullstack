@@ -105,7 +105,7 @@ footer img {
   color: lightgrey;
 }
 #navLinksL {
-  margin-right: 20px;
+  /* margin-right: 20px; */
   /* padding: 10px; */
   display: flex;
 }
@@ -119,9 +119,6 @@ footer img {
 #navLinksL .hidden {
   display: none;
 }
-#navLinksL a:last-child {
-  display: none;
-}
 #navLinksS {
   display: none;
   /* margin-right: 50px; */
@@ -130,7 +127,7 @@ footer img {
   /* display: none; */
   flex-direction: column;
   position: fixed;
-  top: 57px;
+  top: 78px;
   right: 0%;
   background-color: lightgray;
   width: 60px;
@@ -162,6 +159,7 @@ footer img {
   padding: 5px;
   border-radius: 15px;
   font-size: 14px;
+  justify-content: center;
 }
 .section {
   padding-top: 50px;
@@ -237,6 +235,8 @@ main {
 #icons{
   display: flex;
   justify-content: space-evenly;
+  margin-left: 20px;
+
 }
 #icons img {
   margin: 10px 5px 0 5px;
@@ -578,7 +578,7 @@ color: whitesmoke;
       font-weight: bold;
   }
   #introTwoDark h2 {
-      width: 225px;
+      width: 230px;
       margin: 0 auto;
       font-weight: bold;
       color: lightgrey
@@ -600,9 +600,6 @@ color: whitesmoke;
   }
   #navLinksL .hidden {
       display: inline;
-  }
-  #navLinksL a:last-child {
-      display: none;
   }
   .navLinksSE, .navLinksSE a {
       display: none;
@@ -647,11 +644,12 @@ color: whitesmoke;
       margin: 0 auto;
       font-size: 40px;
       font-weight: bold;
-  }
-  #introTwoDark h2 {
-      width: 560px;
+    }
+    #introTwoDark h2 {
+      width: 540px;
       margin: 0 auto;
       font-size: 40px;
+      font-weight: bold;
   }
   #introTwo img {
       width: 60px;
@@ -713,9 +711,6 @@ color: whitesmoke;
   #navLinksL {
       display: none;
   }
-  #navLinksL a:last-child {
-      display: none;
-  }
   #navLinksS {
       display: block;
       padding: 10px;
@@ -729,15 +724,15 @@ color: whitesmoke;
       color: lightgrey;
       margin: 0 auto
   }
-  /* #navLinksSE {
-      top: 10%;
-  } */
   .education li {
       margin-left: 9.75%;
   }
   .educationDark li {
       margin-left: 9.75%;
   }
+  video {
+    width: 250px;
+}
 }
 @media screen and (width < 350px) {
   nav h1 {
@@ -748,8 +743,15 @@ color: whitesmoke;
       flex-direction: column;
       width: 265px;
   }
+  #home, #homeDark {
+    width: 265px;
+    margin: 65px auto;
+  }
+  #introOne, #introOneDark {
+    width: 225px;
+  }
   #introOne > img {
-      width: 225px;
+      width: 185px;
   }
   #introTwo {
       width: 280px;
@@ -763,6 +765,9 @@ color: whitesmoke;
       margin: 0 auto;
       color: lightgrey;
   }
+  #icons, #iconsDark {
+    width: 305px;
+  }
   .content {
       width: 265px;
   }
@@ -770,7 +775,7 @@ color: whitesmoke;
       width: 265px;
   }
   video {
-      width: 250px;
+      width: 200px;
   }
   form br.hidden {
       display: block;
@@ -779,9 +784,6 @@ color: whitesmoke;
       width: 215px;
   }
   #navLinksL {
-      display: none;
-  }
-  #navLinksL a:last-child {
       display: none;
   }
   #navLinksS {
@@ -808,15 +810,23 @@ color: whitesmoke;
       display: none;
   }
 }
-@media screen and (361px < width < 565px) {
+@media screen and (360px < width < 565px) {
   .navLinksSE {
-      top: 79px;
+      top: 78px;
   }
   .navLinksSEDark {
-      top: 79px;
+      top: 78px;
   }
 }
-@media screen and (251px < width < 362px) {
+@media screen and (328px < width < 361px) {
+  .navLinksSE {
+      top: 78px;
+  }
+  .navLinksSEDark {
+      top: 78px;
+  }
+}
+@media screen and (251px < width < 327px) {
   .navLinksSE {
       top: 103px;
   }
@@ -826,10 +836,10 @@ color: whitesmoke;
 }
 @media screen and (width < 252px) {
   .navLinksSE {
-      top: 126px;
+      top: 103px;
   }
   .navLinksSEDark {
-      top: 126px;
+      top: 103px;
   }
 }
 
@@ -859,8 +869,3 @@ color: whitesmoke;
   /* background-color: seagreen; */
   color: lightgrey;
 }
-
-#toggle {
-  display: flex;
-}
-/* This won't work because the ID has higher precedence over the class */
