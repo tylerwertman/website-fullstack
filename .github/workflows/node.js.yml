@@ -26,11 +26,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-
-    - name: cd server & npm i
-      run: |
-        cd /home/tyler/actions-runner/_work/website-fullstack/website-fullstack/server
-        npm i
+    - name: server npm i
+      run: npm i
     - name: cd client & npm i
       run: |
         cd /home/tyler/actions-runner/_work/website-fullstack/website-fullstack/client
@@ -48,7 +45,7 @@ jobs:
         sudo mv build /var/www/html
         sudo grep -rl localhost /var/www/html | xargs sed -i 's/http:\/\/localhost:8000//g'
     - name: copy .env from ~ into server
-      run: cp ~/.env /home/tyler/actions-runner/_work/website-fullstack/website-fullstack/server/.env
+      run: cp ~/.env /home/tyler/actions-runner/_work/website-fullstack/website-fullstack/.env
     - name: restart pm2 & nginx
       run: |
         cd /home/tyler/actions-runner/_work/website-fullstack/website-fullstack
