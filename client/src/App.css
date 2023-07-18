@@ -258,13 +258,13 @@ main {
 }
 #introTwo h2 {
   width: 276px;
-  margin-left: 20px;
+  margin: 0 auto;
   font-weight: bold;
 }
 #introTwoDark h2 {
   width: 276px;
   /* line-height: 1.5; */
-  margin-left: 20px;
+  margin: 0 auto;
   color: lightgrey;
   font-weight: bold;
 }
@@ -274,7 +274,7 @@ main {
   text-align: justify;
 }
 
-.about h2, .projects h2, .contact h2, .education h2 {
+.about h2, .blog h2, .projects h2, .contact h2, .education h2 {
   background-color: lightgrey;
   /* width: 1280px; */
   text-align: center;
@@ -284,7 +284,7 @@ main {
   width: 100%;
   font-weight: bold;
 }
-.aboutDark h2, .projectsDark h2, .contactDark h2, .educationDark h2 {
+.aboutDark h2, .blogDark h2, .projectsDark h2, .contactDark h2, .educationDark h2 {
   background-color: rgb(50, 50, 50);
   color: lightgrey;
   /* width: 1280px; */
@@ -325,6 +325,8 @@ main {
 }
 .content a {
   color: seagreen;
+  font-weight: bold
+
 }
 .contentDark a, .contentDark h3, .contentDark h4 {
   color: lightgrey;
@@ -348,12 +350,12 @@ main {
 }
 .education li {
   margin-left: 9.75%;
-  list-style: square;
+  /* list-style: square; */
   text-align: left;
 }
 .educationDark li {
   margin-left: 9.75%;
-  list-style: square;
+  /* list-style: square; */
   text-align: left;
   color: lightgrey
 }
@@ -572,12 +574,12 @@ color: whitesmoke;
   }
   #introTwo h2 {
       width: 230px;
-      margin-left: 0;
+      margin: 0 auto;
       font-weight: bold;
   }
   #introTwoDark h2 {
       width: 225px;
-      margin-left: 20px;
+      margin: 0 auto;
       font-weight: bold;
       color: lightgrey
   }
@@ -642,13 +644,13 @@ color: whitesmoke;
   }
   #introTwo h2 {
       width: 540px;
-      margin-left: -20px;
+      margin: 0 auto;
       font-size: 40px;
       font-weight: bold;
   }
   #introTwoDark h2 {
       width: 560px;
-      margin-left: -10px;
+      margin: 0 auto;
       font-size: 40px;
   }
   #introTwo img {
@@ -720,10 +722,12 @@ color: whitesmoke;
   }
   #introTwo h2 {
       width: 300px;
+      margin: 0 auto
   }
   #introTwoDark h2 {
       width: 300px;
       color: lightgrey;
+      margin: 0 auto
   }
   /* #navLinksSE {
       top: 10%;
@@ -752,11 +756,11 @@ color: whitesmoke;
   }
   #introTwo h2 {
       width: 265px;
-      margin-left: 7px;
+      margin: 0 auto;
   }
   #introTwoDark h2 {
       width: 265px;
-      margin-left: 7px;
+      margin: 0 auto;
       color: lightgrey;
   }
   .content {
