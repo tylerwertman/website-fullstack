@@ -42,41 +42,38 @@ const RegisterForm = (props) => {
             })
     }
     return (
-        <div>
-            <br />
-            <div style={{ marginTop: "150px" }}>
-                <form onSubmit={submitHandler}>
-                    <h3 className={darkMode ? 'lightText' : null}>Register</h3>
+        <div style={{ marginTop: "150px", textAlign: "center" }}>
+            <form onSubmit={submitHandler}>
+                <h3 className={darkMode ? 'lightText' : null}>Register</h3>
 
-                    <div className="form-floating col-md-4 mx-auto mb-3">
-                        <input type="text" className="form-control" name="fName" value={userInfo.fName} onChange={changeHandler} placeholder='First Name' />
-                        <label>First Name</label>
-                        {errors.fName ? <p className='text-danger'>{errors.fName.message}</p> : null}
-                    </div>
+                <div className="form-floating col-md-4 mx-auto mb-3">
+                    <input type="text" className="form-control custom-input" name="fName" value={userInfo.fName} onChange={changeHandler} placeholder='First Name' />
+                    <label>First Name</label>
+                    {errors.fName ? <p className='text-danger'>{errors.fName.message}</p> : null}
+                </div>
 
-                    <div className="form-floating col-md-4 mx-auto mb-3">
-                        <input type="email" className="form-control" name="email" value={userInfo.email} onChange={changeHandler} placeholder='Email' />
-                        <label>Email</label>
-                        {errors.email ? <p className='text-danger'>{errors.email.message}</p> : null}
-                    </div>
+                <div className="form-floating col-md-4 mx-auto mb-3">
+                    <input type="email" className="form-control custom-input" name="email" value={userInfo.email} onChange={changeHandler} placeholder='Email' />
+                    <label>Email</label>
+                    {errors.email ? <p className='text-danger'>{errors.email.message}</p> : null}
+                </div>
 
-                    <div className="form-floating col-md-4 mx-auto mb-3">
-                        <input type="password" className="form-control" name="password" value={userInfo.password} onChange={changeHandler} placeholder='Password' />
-                        <label>Password</label>
-                        {errors.password ? <p className='text-danger'>{errors.password.message}</p> : null}
-                    </div>
+                <div className="form-floating col-md-4 mx-auto mb-3">
+                    <input type="password" className="form-control custom-input" name="password" value={userInfo.password} onChange={changeHandler} placeholder='Password' />
+                    <label>Password</label>
+                    {errors.password ? <p className='text-danger'>{errors.password.message}</p> : null}
+                </div>
 
-                    <div className="form-floating col-md-4 mx-auto mb-3">
-                        <input type="password" className="form-control" name="confirmPassword" value={userInfo.confirmPassword} onChange={changeHandler} placeholder='Confirm Password' />
-                        <label>Confirm Password</label>
-                        {errors.confirmPassword ? <p className='text-danger'>{errors.confirmPassword.message}</p> : null}
-                    </div>
+                <div className="form-floating col-md-4 mx-auto mb-3">
+                    <input type="password" className="form-control custom-input" name="confirmPassword" value={userInfo.confirmPassword} onChange={changeHandler} placeholder='Confirm Password' />
+                    <label>Confirm Password</label>
+                    {errors.confirmPassword ? <p className='text-danger'>{errors.confirmPassword.message}</p> : null}
+                </div>
 
-                    <div className="form-group">
-                        <button type="submit" className='btn btn-success'>Register</button>
-                    </div>
-                </form>
-            </div>
+                <div className="form-group">
+                    <button type="submit" className='btn btn-success'>Register</button>
+                </div>
+            </form>
         </div>
     )
 }

@@ -38,25 +38,22 @@ const LoginForm = (props) => {
             })
     }
     return (
-        <div>
-            <br />
-            <div>
-                <form onSubmit={submitHandler}>
-                    <h3 className={darkMode ? 'lightText' : null} style={{ marginTop: "150px" }}>Login</h3>
-                    {errors.msg ? <p className="text-danger">{errors.msg}</p> : null}
-                    <div className="form-floating col-md-4 mx-auto mb-3">
-                        <input type="email" className="form-control" name="email" value={userInfo.email} onChange={changeHandler} placeholder='Email' />
-                        <label htmlFor='email'>Email</label>
-                    </div>
-                    <div className="form-floating col-md-4 mx-auto mb-3">
-                        <input type="password" className="form-control" name="password" value={userInfo.password} onChange={changeHandler} placeholder='Password' />
-                        <label htmlFor='password'>Password</label>
-                    </div>
-                    <div className="form-group">
-                        <button type="submit" className='btn btn-success'>Login</button>
-                    </div>
-                </form>
-            </div>
+        <div style={{ marginTop: "150px", textAlign: "center" }}>
+            <form onSubmit={submitHandler}>
+                <h3 className={darkMode ? 'lightText' : null} style={{ marginTop: "150px" }}>Login</h3>
+                {errors.msg ? <p className="text-danger">{errors.msg}</p> : null}
+                <div className="form-floating col-md-4 mx-auto mb-3">
+                    <input type="email" className="form-control custom-input" name="email" value={userInfo.email} onChange={changeHandler} placeholder='Email' />
+                    <label htmlFor='email'>Email</label>
+                </div>
+                <div className="form-floating col-md-4 mx-auto mb-3">
+                    <input type="password" className="form-control custom-input" name="password" value={userInfo.password} onChange={changeHandler} placeholder='Password' />
+                    <label htmlFor='password'>Password</label>
+                </div>
+                <div className="form-group">
+                    <button type="submit" className='btn btn-success'>Login</button>
+                </div>
+            </form>
         </div>
     )
 }
