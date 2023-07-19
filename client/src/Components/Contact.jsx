@@ -54,18 +54,18 @@ const Contact = (props) => {
                     <br />
                     <div className="row">
                         <div className="form-floating mb-3 col">
-                            <input type="text" className="form-control custom-input col" name="fName" value={contactForm.fName} onChange={changeHandler} placeholder="Name" />
+                            <input type="text" className="form-control custom-input col" name="fName" id="fName" value={contactForm.fName} onChange={changeHandler} placeholder="Name" autocomplete="name" />
                             <label htmlFor="fName" style={{ color: "darkslategrey" }}>Name</label>
                             {errors.fName ? <p className='text-danger'>{errors.fName.message}</p> : null}
                         </div>
                         <div className="form-floating mb-3 col">
-                            <input type="email" className="form-control custom-input" name="email" value={contactForm.email} onChange={changeHandler} placeholder="Email" />
+                            <input type="email" className="form-control custom-input" name="email" id="email" value={contactForm.email} onChange={changeHandler} placeholder="Email" autocomplete="email"/>
                             <label htmlFor="email" style={{ color: "darkslategrey" }}>Email</label>
                             {errors.email ? <p className='text-danger'>{errors.email.message}</p> : null}
                         </div>
                     </div>
                     <div className="form-floating mb-3">
-                        <textarea className="form-control custom-input" name="message" value={contactForm.message} onChange={changeHandler} placeholder="Leave a comment here" style={{ height: "100px" }}></textarea>
+                        <textarea className="form-control custom-input" name="message" id="message" value={contactForm.message} onChange={changeHandler} placeholder="Leave a comment here" style={{ height: "100px" }}></textarea>
                         <label htmlFor="message" style={{ color: "darkslategrey" }}>Message</label>
                         {errors.message ? <p className='text-danger'>{errors.message.message}</p> : null}
                     </div>

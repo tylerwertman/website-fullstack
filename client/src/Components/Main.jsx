@@ -11,10 +11,10 @@ const Main = (props) => {
     return (
         <main>
             <Home darkMode={darkMode} />
-            <About darkMode={darkMode} />
             <Blog darkMode={darkMode} />
             <Projects darkMode={darkMode} />
             <Education darkMode={darkMode} />
+            <About darkMode={darkMode} />
             <Contact darkMode={darkMode} />
         </main>
     )
