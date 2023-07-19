@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -6,49 +5,52 @@
   /* border: 1px dotted red; */
   color: rgb(50, 50, 50)
 }
+
 body {
   background-color: whitesmoke;
 }
 
-/* dark mode gradient fade vv*/
-body::before,
-  body::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-    transition: opacity .3s ease;
-  }
-  
-  body::before {
-    /* dark */
-    background-image: radial-gradient( circle farthest-corner at -4% -12.9%, rgb(74, 110, 88) 0.3%, hwb(127 12% 81%) 90.2%);
-    /* background-image: linear-gradient( 109.6deg,  rgba(61,131,97,1) 11.2%, rgba(28,103,88,1) 91.1% ); */
-    opacity: 1;
-  }
-  
-  body.change::before {
-    opacity: 0;
-  }
-  
-  body::after {
-    /* light */
-    opacity: 0;
-    background-image: radial-gradient( circle 2000px at -6.7% 50%,  rgba(80,131,73,1) 0%, rgba(140,209,131,1) 26.2%, rgba(178,231,170,1) 50.6%, rgba(144,213,135,1) 74.1%, rgba(75,118,69,1) 100.3% );  }
-  
-  body.change::after {
-    opacity: 1;
-  }
+/* dark mode gradient fade vv */
+body::before, body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  transition: opacity .3s ease;
+}
+
+body::before {
+  /* dark */
+  background-image: radial-gradient(circle farthest-corner at -4% -12.9%, rgb(74, 110, 88) 0.3%, hwb(127 12% 81%) 90.2%);
+  /* background-image: linear-gradient( 109.6deg,  rgba(61,131,97,1) 11.2%, rgba(28,103,88,1) 91.1% ); */
+  opacity: 1;
+}
+
+body.change::before {
+  opacity: 0;
+}
+
+body::after {
+  /* light */
+  opacity: 0;
+  background-image: radial-gradient(circle 2000px at -6.7% 50%, rgba(80, 131, 73, 1) 0%, rgba(140, 209, 131, 1) 26.2%, rgba(178, 231, 170, 1) 50.6%, rgba(144, 213, 135, 1) 74.1%, rgba(75, 118, 69, 1) 100.3%);
+}
+
+body.change::after {
+  opacity: 1;
+}
+
 /* dark mode gradient fade ^^ */
 
 #container, footer {
   width: 100%;
   margin: 0 auto;
 }
-nav {
+
+.nav, .navDark {
   display: flex;
   position: fixed;
   top: 0%;
@@ -56,7 +58,8 @@ nav {
   /* padding: 0 20px 0 20px; */
   overflow: hidden;
 }
-nav, footer {
+
+.nav, .navDark, footer {
   background-color: lightgrey;
   justify-content: space-between;
   align-items: center;
@@ -65,6 +68,7 @@ nav, footer {
   /* position: fixed; */
   z-index: 100;
 }
+
 .nav h1, .navDark h1 {
   padding: 10px 0;
   font-size: 18px;
@@ -72,22 +76,27 @@ nav, footer {
   font-weight: bold;
   margin-top: 10px;
 }
+
 .nav a, .navDark a {
   padding: 10px 0;
   font-size: 17px;
   margin-top: 10px;
-  color: rgb(50,50,50);
+  color: rgb(50, 50, 50);
 }
+
 .navDark a {
   color: lightgrey;
 }
+
 .navDark span {
   color: lightgrey;
 }
-nav a, footer {
+
+.nav a, .navDark a, footer {
   text-decoration: none;
   /* color: rgb(50,50,50); */
 }
+
 footer {
   padding: 10px 0;
   position: fixed;
@@ -95,22 +104,25 @@ footer {
   text-align: center;
   margin: 0;
 }
-.footerDark, .navDark{
+
+.footerDark, .navDark {
   background-color: rgb(50, 50, 50);
   box-shadow: 0 0 10px lightgrey;
-
 }
+
 .footerDark span {
   color: lightgrey;
 }
+
 .navLinksL {
   /* margin-right: 20px; */
   /* padding: 10px; */
   display: flex;
 }
+
 .navLinksL a {
   display: flex;
-  align-items:flex-start;
+  align-items: center;
   padding: 10px;
   border-radius: 15px;
   font-size: 14px;
@@ -131,7 +143,7 @@ footer {
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 78px;
+  top: 60px;
   right: 0%;
   background-color: lightgray;
   width: 60px;
@@ -141,22 +153,26 @@ footer {
   gap: 30px;
   box-shadow: 0 0 10px black;
 }
+
 .navLinksSEDark {
   background-color: rgb(50, 50, 50);
   box-shadow: 0 0 10px lightgrey;
 }
+
 .navLinksSE a, .navLinksSEDark a {
   display: flex;
-  align-items:flex-end;
+  align-items: flex-end;
   padding: 5px;
   border-radius: 15px;
   font-size: 14px;
   justify-content: center;
 }
+
 .section, .sectionDark {
   padding-top: 50px;
   width: 100%;
 }
+
 main {
   padding: 50px 0 0 0;
   display: flex;
@@ -164,7 +180,8 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.home, .homeDark {                                        
+
+.home, .homeDark {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -175,10 +192,12 @@ main {
   margin-top: 50px;
   width: 350px;
 }
-.homeDark {                                        
+
+.homeDark {
   background-color: rgb(50, 50, 50);
   color: lightgrey;
 }
+
 #introOne {
   padding: 20px;
   background-color: seagreen;
@@ -188,6 +207,7 @@ main {
   color: lightgrey;
   line-height: 15px;
 }
+
 #introOne>img {
   width: 260px;
   border-radius: 35px;
@@ -195,15 +215,18 @@ main {
   margin-bottom: 20px;
   margin-left: 0;
 }
+
 #introOne h4, #introOne h2 {
   color: lightgrey;
   font-weight: bold;
 }
+
 #icons, #iconsDark {
   display: flex;
   justify-content: space-evenly;
-  margin-left: 20px;
+  margin: 0 auto
 }
+
 #icons img, #iconsDark img {
   margin: 10px 5px 0 5px;
   width: 30px;
@@ -213,14 +236,16 @@ main {
   padding-left: 20px;
   text-align: center;
   line-height: 1.5;
-  width: 340px;
+  width: 350px;
   padding-left: 0;
 }
+
 #introTwo h2, #introTwoDark h2 {
   width: 276px;
   margin: 0 auto;
   font-weight: bold;
 }
+
 #introTwoDark h2 {
   color: lightgrey;
 }
@@ -234,6 +259,7 @@ main {
   width: 100%;
   font-weight: bold;
 }
+
 .aboutDark h2, .blogDark h2, .projectsDark h2, .contactDark h2, .educationDark h2 {
   background-color: rgb(50, 50, 50);
   color: lightgrey;
@@ -249,21 +275,26 @@ main {
   border-radius: 50px;
   width: 300px;
 }
+
 .contentDark {
   background-color: rgb(50, 50, 50);
   color: lightgrey;
 }
+
 .contentDark p {
   color: lightgrey
 }
-.content h3, .content h4 {
+
+.content h3, .content h4, form h3 {
   font-weight: bold;
 }
+
 .content a {
   color: seagreen;
   font-weight: bold;
 
 }
+
 .contentDark a, .contentDark h3, .contentDark h4 {
   color: lightgrey;
   font-weight: bold;
@@ -271,41 +302,49 @@ main {
 
 .about .content, .aboutDark .contentDark {
   line-height: 1.3;
-  text-align: justify;    
+  text-align: justify;
 }
+
 .about p, .aboutDark p {
   padding: 10px;
 }
+
 .aboutDark p {
   color: lightgrey;
 }
+
 .education li, .educationDark li {
   margin-left: 9.75%;
   list-style: square;
   text-align: left;
 }
+
 .educationDark li {
   color: lightgrey
 }
+
 .contact {
   margin-bottom: 50px;
 }
+
 .row>.form-floating>label {
   left: 10px
 }
+.lightText {
+  color: lightgrey;
+}
+
 .custom-input:focus {
   border-color: #80ff8d;
   box-shadow: 0 0 0 0.2rem rgba(0, 255, 13, 0.25);
 }
-.lightText {
-  color: lightgrey
-}
+
 table, th, td {
   border: 1px solid;
   padding: 5px;
 }
-/* Pokemon */
 
+/* Pokemon vv */
 .gameboy {
   display: none;
   flex-direction: column;
@@ -316,6 +355,7 @@ table, th, td {
   height: 600px;
   border-radius: 30px;
 }
+
 .gameboyScr {
   margin: 0 auto 0;
   padding: 35px 45px;
@@ -329,10 +369,12 @@ table, th, td {
   flex-direction: column;
   align-items: center;
 }
+
 .gameboyScr p {
   font-weight: bold;
   /* margin-bottom: 20px; */
 }
+
 .js {
   background-color: whitesmoke;
   background: radial-gradient(circle at center, white 15px, aqua 45px, red 150px);
@@ -343,6 +385,7 @@ table, th, td {
   justify-content: space-between;
   margin-bottom: 5px;
 }
+
 .js img {
   /* display: flex; */
   justify-content: center;
@@ -352,6 +395,7 @@ table, th, td {
   align-self: center;
   margin-top: 20px;
 }
+
 #textBox, #textBox2 {
   /* background-color: red; */
   color: gold;
@@ -361,32 +405,40 @@ table, th, td {
   font-size: 1.1rem;
   font-family: monospace;
 }
+
 .pokeName {
   text-transform: capitalize;
 }
+
 .gameboy p {
   color: white;
   text-align: center;
   margin-top: -20px;
   font-size: 1.5rem;
 }
+
 .C {
   color: red;
 }
+
 .O {
   color: purple;
   font-size: 1.75rem;
 }
+
 .L {
   color: lime;
 }
+
 .O2 {
   color: yellow;
   font-size: 1.75rem;
 }
+
 .R {
   color: cyan;
 }
+
 .nintendo {
   text-align: center;
   padding: 3px 0;
@@ -399,11 +451,13 @@ table, th, td {
   display: inline-block;
   color: rgb(57, 175, 108);
 }
-.gameboyCtrl{
+
+.gameboyCtrl {
   display: flex;
   justify-content: space-between;
   margin: 0px 20px 0px;
 }
+
 .dpad {
   width: 139px;
   height: 105px;
@@ -411,6 +465,7 @@ table, th, td {
   flex-wrap: wrap;
   /* overflow:visible; */
 }
+
 .AB {
   /* width: 200px; */
   height: 75px;
@@ -419,345 +474,381 @@ table, th, td {
   justify-content: space-between;
   gap: 25px
 }
+
 .A {
   align-self: flex-start;
 }
+
 .sqBtn, .activeBtn, .cirBtn {
   width: 35px;
   height: 35px;
 }
+
 .activeBtn, .cirBtn {
   cursor: crosshair;
 }
-.activeBtn, .cirBtn, .dot{
+
+.activeBtn, .cirBtn, .dot {
   background-color: rgb(151, 151, 151);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
 }
+
 .cirBtn {
   border-radius: 100px;
 }
+
 .ss {
   display: flex;
   justify-content: center;
   gap: 30px;
   margin-top: 50px;
 }
+
 .ssBtn {
   width: 40px;
   height: 15px;
   background-color: rgb(151, 151, 151);
   border-radius: 16px;
   margin-bottom: 10px;
-  
+
 }
+
 .start, .select {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .ssText {
   color: rgb(57, 175, 108);
 }
+
 .sillhouette {
   filter: grayscale(100%) brightness(0);
 }
+
 .power {
-position: relative;
-top: 80px;
-/* left: 480px; */
-color: whitesmoke;
+  position: relative;
+  top: 80px;
+  /* left: 480px; */
+  color: whitesmoke;
 }
+
 #space {
   text-decoration: none;
 }
 
+/* Pokemon ^^ */
 
-/* Media Queries */
+
+/* Media Queries vv *//* Media Queries vv */
+
+/* Bigger screen 1920+ vv */
+
+@media screen and (width > 1919px) {
+
+  .nav a, .nav h1, .navDark a, .navDark h1 {
+    padding: 18px 0;
+    font-size: 50px
+  }
+
+  .home, .homeDark {
+    flex-direction: row;
+    width: 1120px;
+  }
+
+  #introOne>img {
+    width: 520px;
+  }
+
+  #introOne {
+    font-size: 25px;
+  }
+
+  #introTwo h2, #introTwoDark h2 {
+    width: 540px;
+    margin: 0 auto;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  #introTwo img, #introTwoDark img {
+    width: 60px;
+  }
+
+  .navLinksL a {
+    font-size: 20px;
+    padding: 20px 35px 20px 20px;
+    margin: 0 20px;
+  }
+
+  .navLinksL a img {
+    height: 150%;
+  }
+
+  .home, .homeDark {
+    width: 1120px;
+    margin-top: 100px;
+  }
+
+  .content, .contentDark {
+    width: 1120px;
+  }
+
+  .content p, .contentDark p {
+    font-size: 24px;
+  }
+
+  .contentDark p {
+    color: lightgrey
+  }
+
+  .education li {
+    margin-left: 38%;
+  }
+
+  .educationDark li {
+    margin-left: 38%;
+  }
+}
+
+/* Bigger screen 1920+ ^^ */
+
+/* Big screen 900-1920 vv */
 
 @media screen and (width > 899px) {
-  .home {
-      flex-direction: row;
-      width: 580px;
+
+  .home, .homeDark {
+    flex-direction: row;
+    width: 580px;
   }
+
   .homeDark {
-      flex-direction: row;
-      width: 580px;
-      background-color: rgb(50, 50, 50);
-      color: lightgrey;
+    background-color: rgb(50, 50, 50);
+    color: lightgrey;
   }
+
   #introTwo, #introTwoDark {
-      margin-left: 20px;
-      width: 560px;
+    margin-left: 20px;
+    width: 560px;
   }
+
   #introTwo h2, #introTwoDark h2 {
-      width: 230px;
-      margin: 0 auto;
-      font-weight: bold;
+    width: 230px;
+    margin: 0 auto;
+    font-weight: bold;
   }
+
   #introTwoDark h2 {
-      color: lightgrey
+    color: lightgrey
   }
+
   .content, .contentDark {
-      width: 580px;
+    width: 580px;
   }
-  form br.hidden {
-      display: none;
-  }
+
   form textarea {
-      width: 425px;
+    width: 425px;
   }
+
   .navLinksL {
-      display: flex;
+    display: flex;
   }
+
   .navLinksL .hidden {
-      display: inline;
+    display: inline;
   }
-  .navLinksSE, .navLinksSE a {
-      display: none;
+
+  .education li, .educationDark li {
+    margin-left: 25.25%;
   }
-  .navLinksSEDark, .navLinksSEDark a {
-      display: none;
-  }
-  .education li {
-      margin-left: 25.25%;
-  }
+
   .educationDark li {
-      margin-left: 25.25%;
-      color: lightgrey;
+    color: lightgrey;
   }
+
   .gameboy {
-      display: flex;
+    display: flex;
   }
+
   video {
-      display: none;
+    display: none;
   }
 }
-@media screen and (width > 1919px) {
-  nav a, nav h1 {
-    font-size: 40px
-  }
-  .home {
-      flex-direction: row;
-      width: 1120px;
-  }
-  .homeDark {
-      flex-direction: row;
-      width: 1120px;
-  }
-  #introOne > img {
-      width: 520px;
-  }
-  #introOne {
-      font-size: 25px;
-  }
-  #introTwo h2 {
-      width: 540px;
-      margin: 0 auto;
-      font-size: 40px;
-      font-weight: bold;
-    }
-    #introTwoDark h2 {
-      width: 540px;
-      margin: 0 auto;
-      font-size: 40px;
-      font-weight: bold;
-  }
-  #introTwo img {
-      width: 60px;
-  }
-  #introTwoDark img {
-      width: 60px;
-  }
-  nav h1 {
-      padding: 18px 0;
-      font-size: 50px;
-  }
+
+/* Big screen 900-1920 ^^ */
+
+/* Tablet screen 566-899 vv */
+
+@media screen and (565px < width < 900px) {
   .navLinksL a {
-      font-size: 20px;
-      padding: 20px 35px 20px 20px;
-      margin: 0 20px;
+    /* gap: 20px; */
+    margin: 0 10px 0 10px;
   }
-  .navLinksL a img {
-      height: 150%;
+
+  .navLinksSE, .navLinksSE a {
+    display: none;
   }
-  .home {
-      width: 1120px;
-      margin-top: 100px;
-  }
-  .homeDark {
-      width: 1120px;
-      margin-top: 100px;
-  }
-  .content {
-      width: 1120px;
-  }
-  .contentDark {
-      width: 1120px;
-  }
-  .content p {
-      font-size: 24px;
-  }
-  .contentDark p {
-      font-size: 24px;
-      color: lightgrey
-  }
-  .education li {
-      margin-left: 38%;
-  }
-  .educationDark li {
-      margin-left: 38%;
+
+  .navLinksSEDark, .navLinksSEDark a {
+    display: none;
   }
 }
-@media screen and (349px < width < 565px) {
-  nav a {
-    /* padding: 10px 0; */
+
+/* Tablet screen 566-899 ^^ */
+
+/* Phone screen 350-565 vv */
+
+@media screen and (349px < width < 566px) {
+
+  .nav a, .navDark a {
     font-size: 16px;
-    /* margin-top: 10px; */
-    /* margin-right: 10px; */
   }
-  nav h1 {
-      padding: 18px 0;
-      font-size: 20px;
+
+  .nav h1, .navDark h1 {
+    padding: 18px 0;
+    font-size: 20px;
   }
-  .navLinksL {
-      display: none;
-  }
-  .navLinksS {
-      display: block;
-      padding: 10px;
-  }
+
   #introTwo h2 {
-      width: 300px;
-      margin: 0 auto
+    width: 300px;
+    margin: 0 auto
   }
+
   #introTwoDark h2 {
-      width: 300px;
-      color: lightgrey;
-      margin: 0 auto
+    width: 300px;
+    color: lightgrey;
+    margin: 0 auto
   }
+
   .education li {
-      margin-left: 9.75%;
+    margin-left: 9.75%;
   }
+
   .educationDark li {
-      margin-left: 9.75%;
+    margin-left: 9.75%;
   }
+
   video {
     width: 250px;
+  }
 }
-}
+
+/* Phone screen 350-565 ^^ */
+
+/* Phone screen -350 vv */
+
 @media screen and (width < 350px) {
-  nav h1 {
-      padding: 18px 0;
-      font-size: 20px;
+
+  .nav h1, .navDark h1 {
+    padding: 18px 0;
+    font-size: 20px;
   }
+
   .home {
-      flex-direction: column;
-      width: 265px;
+    flex-direction: column;
+    width: 265px;
   }
+
   #home, #homeDark {
     width: 265px;
     margin: 65px auto;
   }
+
   #introOne, #introOneDark {
     width: 225px;
   }
-  #introOne > img {
-      width: 185px;
+
+  #introOne>img {
+    width: 185px;
   }
+
   #introTwo {
-      width: 280px;
+    width: 280px;
   }
-  #introTwo h2 {
-      width: 265px;
-      margin: 0 auto;
+
+  #introTwo h2, #introTwoDark h2 {
+    width: 265px;
+    margin: 0 auto;
   }
+
   #introTwoDark h2 {
-      width: 265px;
-      margin: 0 auto;
-      color: lightgrey;
+    color: lightgrey;
   }
+
   #icons, #iconsDark {
     width: 305px;
   }
-  .content {
-      width: 265px;
+
+  .content, .contentDark {
+    width: 265px;
   }
-  .contentDark {
-      width: 265px;
-  }
+
   video {
-      width: 200px;
+    width: 200px;
   }
-  form br.hidden {
-      display: block;
-  }
+
   form textarea {
-      width: 215px;
+    width: 215px;
   }
-  .navLinksL {
-      display: none;
-  }
-  .navLinksS {
-      display: block;
-      padding: 10px;
-  }
-  .education li {
-      margin-left: 5.75%;
-  }
-  .educationDark li {
-      margin-left: 5.75%;
+
+  .education li, .educationDark li {
+    margin-left: 5.75%;
   }
 }
 
-@media screen and (564px < width < 900px) {
-  .navLinksL a {
-      /* gap: 20px; */
-      margin: 0 10px 0 10px;
+/* Phone screen -350 ^^ */
+
+/* Hamburger menu all screens below 565 vv*/
+
+@media screen and (width < 566px) {
+  .navLinksL {
+    display: none;
   }
-  .navLinksSE, .navLinksSE a {
-      display: none;
-  }
-  .navLinksSEDark, .navLinksSEDark a {
-      display: none;
-  }
-}
-@media screen and (360px < width < 565px) {
-  .navLinksSE {
-      top: 78px;
-  }
-  .navLinksSEDark {
-      top: 78px;
+
+  .navLinksS {
+    display: block;
+    /* padding: 10px; */
   }
 }
-@media screen and (328px < width < 361px) {
-  .navLinksSE {
-      top: 78px;
-  }
-  .navLinksSEDark {
-      top: 78px;
-  }
-}
-@media screen and (251px < width < 327px) {
-  .navLinksSE {
-      top: 103px;
-  }
-  .navLinksSEDark {
-      top: 103px;
+
+/* Hamburger menu all screens below 565 ^^ */
+
+/* Nav Links Small Expanded position vv */
+
+@media screen and (306px < width < 566px) {
+  .navLinksSE, .navLinksSEDark {
+    top: 78px;
   }
 }
-@media screen and (width < 252px) {
-  .navLinksSE {
-      top: 103px;
+
+@media screen and (181px < width < 307px) {
+  .navLinksSE, .navLinksSEDark {
+    top: 102px;
   }
-  .navLinksSEDark {
-      top: 103px;
+  .nav a, .navDark a {
+    font-size: 14px;
   }
 }
+
+@media screen and (1px < width < 182px) {
+  .navLinksSE, .navLinksSEDark {
+    top: 126px;
+  }
+  .nav h1, .nav a, .navDark h1, .navDark a {
+    font-size: 14px;
+  }
+}
+
+/* Nav Links Small Expanded position ^^ */
+
+/* Media Queries ^^ *//* Media Queries ^^ */
 
 /* JS & MQ classes */
+
 .shadow {
   position: relative;
   bottom: 10px;
@@ -765,6 +856,7 @@ color: whitesmoke;
   cursor: pointer;
   transition: 250ms;
 }
+
 .shadowNav {
   position: relative;
   bottom: 5px;
@@ -776,9 +868,11 @@ color: whitesmoke;
   padding: 10px;
   transition: 500ms;
 }
+
 .hide {
   display: none;
 }
+
 .navLiHover {
   /* background-color: seagreen; */
   color: lightgrey;

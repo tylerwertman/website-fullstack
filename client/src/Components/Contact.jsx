@@ -50,16 +50,16 @@ const Contact = (props) => {
             <h2>Contact</h2>
             <div className={darkMode ? "contentDark" : "content"} id="form" style={{ padding: "40px" }}>
                 <form onSubmit={submitHandler} onClick={() => setMsgSent(false)}>
-                    {msgSent ? <h4 style={{ color: darkMode ? "lightgreen" : "green" }}>Message sent! (Check spam folder!)</h4> : null}
-                    <br />
+                    <h3>Contact Form</h3>
+                    {msgSent ? <h4 style={{ color: darkMode ? "lightgreen" : "mediumseagreen" }}>Message sent! (Check spam folder!)</h4> : null}
                     <div className="row">
-                        <div className="form-floating mb-3 col">
-                            <input type="text" className="form-control custom-input col" name="fName" id="fName" value={contactForm.fName} onChange={changeHandler} placeholder="Name" autocomplete="name" />
+                        <div className="form-floating mb-3 col col-12">
+                            <input type="text" className="form-control custom-input col" name="fName" id="fName" value={contactForm.fName} onChange={changeHandler} placeholder="Name" autoComplete="name" />
                             <label htmlFor="fName" style={{ color: "darkslategrey" }}>Name</label>
                             {errors.fName ? <p className='text-danger'>{errors.fName.message}</p> : null}
                         </div>
-                        <div className="form-floating mb-3 col">
-                            <input type="email" className="form-control custom-input" name="email" id="email" value={contactForm.email} onChange={changeHandler} placeholder="Email" autocomplete="email"/>
+                        <div className="form-floating mb-3 col col-12">
+                            <input type="email" className="form-control custom-input" name="email" id="email" value={contactForm.email} onChange={changeHandler} placeholder="Email" autoComplete="email"/>
                             <label htmlFor="email" style={{ color: "darkslategrey" }}>Email</label>
                             {errors.email ? <p className='text-danger'>{errors.email.message}</p> : null}
                         </div>
