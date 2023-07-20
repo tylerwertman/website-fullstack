@@ -3,8 +3,8 @@ import Cookies from 'js-cookie'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faSun } from '@fortawesome/free-solid-svg-icons'
 // import { faMoon } from '@fortawesome/free-solid-svg-icons'
-import sunDSG from './images/sun-regular-DSG.svg'
-import moonLG from './images/moon-regular-LG.svg'
+import sunDSG from './images/FontAwesome-Icons/sun-regular-DSG.svg'
+import moonLG from './images/FontAwesome-Icons/moon-regular-LG.svg'
 
 const DarkMode = (props) => {
     const { darkMode, setDarkMode } = props
