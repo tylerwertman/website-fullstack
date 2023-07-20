@@ -20,7 +20,7 @@ const Home = (props) => {
 
     const hover = (index) => {
         // e.stopPropagation();
-        console.log("hover running")
+        // console.log("hover running")
         setHoveredElement(index)
         // console.log(index)
     }

@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
+
 import axios from 'axios'
 
 const Contact = (props) => {
     const { darkMode, windowWidth } = props
+    const toastMsgSent = () => toast.success(`Email sent!`)
+
     const [contactForm, setContactForm] = useState({ fName: "", email: "", message: "" })
     const [errors, setErrors] = useState({})
     const [msgSent, setMsgSent] = useState(false)
@@ -27,6 +31,7 @@ const Contact = (props) => {
                     message: ""
                 })
                 setMsgSent(true)
+                toastMsgSent()
             })
             .catch(err => {
                 console.log(`submit errer`, err)

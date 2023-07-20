@@ -9,7 +9,9 @@ import LoginForm from './Components/LoginForm';
 import RegisterForm from './Components/RegisterForm';
 import Messages from './Components/Messages';
 import DarkMode from './Components/DarkMode';
+import { ToastContainer, Slide } from 'react-toastify';
 
+  import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [darkMode, setDarkMode] = useState(false)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -30,6 +32,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Nav darkMode={darkMode} windowWidth={windowWidth} />
+        <ToastContainer transition={Slide} position="bottom-right" autoClose={2500} hideProgressBar= {false} closeOnClick= {true} pauseOnHover= {true} draggable= {true} progress= {undefined} theme= {darkMode ? "dark" : "light"} />
         <Routes>
           <Route path="/" element={<Main darkMode={darkMode} windowWidth={windowWidth} />} />
           <Route path="/admin-login" element={<LoginForm darkMode={darkMode} />} />

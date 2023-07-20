@@ -37,7 +37,7 @@ module.exports.deleteAllMessages = (req, res) => {
 }
 
 module.exports.createEmail = (req, res) => {
-    console.log('controller' + req.body)
+    // console.log('controller' + req.body)
 
     const sendEmail = ({ email, message }) => {
         return new Promise((resolve, reject) => {
