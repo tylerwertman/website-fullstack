@@ -1,5 +1,5 @@
 import React from 'react'
-import Home from './Home'
+import Intro from './Intro'
 import About from './About'
 import Blog from './Blog'
 import Projects from './Projects'
@@ -10,7 +10,7 @@ const Main = (props) => {
     const { darkMode, windowWidth } = props
     return (
         <main>
-            <Home darkMode={darkMode} />
+            <Intro darkMode={darkMode} />
             <Blog darkMode={darkMode} />
             <Projects darkMode={darkMode} />
             <Education darkMode={darkMode} />

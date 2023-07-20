@@ -13,7 +13,7 @@ import githubSG from './images/Github-fill-SG.svg'
 import mediumSG from './images/Medium-fill-SG.svg'
 import fileSG from './images/File-fill-SG.svg'
 
-const Home = (props) => {
+const Intro = (props) => {
     const { darkMode } = props
 
     const [hoveredElement, setHoveredElement] = useState(null)
@@ -49,4 +49,4 @@ const Home = (props) => {
     )
 }
 
-export default Home
+export default Intro
