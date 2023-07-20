@@ -14,7 +14,7 @@ function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
   useEffect(() => {
-    // console.log(windowWidth)
+    console.log(windowWidth)
     const handleResize = () => {
       setWindowWidth(window.innerWidth)
     }

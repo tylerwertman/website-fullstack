@@ -186,7 +186,6 @@ main {
   flex-direction: column;
   align-items: center;
   background-color: lightgrey;
-  border-radius: 65px;
   border-radius: 35px;
   padding: 20px;
   margin-top: 50px;
@@ -201,7 +200,6 @@ main {
 #introOne {
   padding: 20px;
   background-color: seagreen;
-  border-radius: 50px;
   border-radius: 25px;
   text-align: center;
   color: lightgrey;
@@ -210,7 +208,6 @@ main {
 
 #introOne>img {
   width: 260px;
-  border-radius: 35px;
   border-radius: 10px;
   margin-bottom: 20px;
   margin-left: 0;
@@ -273,7 +270,7 @@ main {
   background-color: lightgrey;
   padding: 20px;
   border-radius: 50px;
-  width: 300px;
+  width: 350px;
 }
 
 .contentDark {
@@ -546,80 +543,9 @@ table, th, td {
 
 /* Media Queries vv *//* Media Queries vv */
 
-/* Bigger screen 1920+ vv */
-
-@media screen and (width > 1919px) {
-
-  .nav a, .nav h1, .navDark a, .navDark h1 {
-    padding: 18px 0;
-    font-size: 50px
-  }
-
-  .home, .homeDark {
-    flex-direction: row;
-    width: 1120px;
-  }
-
-  #introOne>img {
-    width: 520px;
-  }
-
-  #introOne {
-    font-size: 25px;
-  }
-
-  #introTwo h2, #introTwoDark h2 {
-    width: 540px;
-    margin: 0 auto;
-    font-size: 40px;
-    font-weight: bold;
-  }
-
-  #introTwo img, #introTwoDark img {
-    width: 60px;
-  }
-
-  .navLinksL a {
-    font-size: 20px;
-    padding: 20px 35px 20px 20px;
-    margin: 0 20px;
-  }
-
-  .navLinksL a img {
-    height: 150%;
-  }
-
-  .home, .homeDark {
-    width: 1120px;
-    margin-top: 100px;
-  }
-
-  .content, .contentDark {
-    width: 1120px;
-  }
-
-  .content p, .contentDark p {
-    font-size: 24px;
-  }
-
-  .contentDark p {
-    color: lightgrey
-  }
-
-  .education li {
-    margin-left: 38%;
-  }
-
-  .educationDark li {
-    margin-left: 38%;
-  }
-}
-
-/* Bigger screen 1920+ ^^ */
-
 /* Big screen 900-1920 vv */
 
-@media screen and (width > 899px) {
+@media screen and (width >= 901px) {
 
   .home, .homeDark {
     flex-direction: row;
@@ -632,12 +558,12 @@ table, th, td {
   }
 
   #introTwo, #introTwoDark {
-    margin-left: 20px;
+    margin: 0 auto;
     width: 560px;
   }
 
   #introTwo h2, #introTwoDark h2 {
-    width: 230px;
+    width: 260px;
     margin: 0 auto;
     font-weight: bold;
   }
@@ -681,37 +607,99 @@ table, th, td {
 
 /* Big screen 900-1920 ^^ */
 
-/* Tablet screen 566-899 vv */
+/* Bigger screen 1920+ vv */
 
-@media screen and (565px < width < 900px) {
+@media screen and (width >= 1920px) {
+
+  .nav a, .nav h1, .navDark a, .navDark h1 {
+    padding: 18px 0;
+    font-size: 50px
+  }
+
+  .home, .homeDark {
+    flex-direction: row;
+    width: 1120px;
+    margin-top: 100px;
+  }
+
+  #introOne>img {
+    width: 520px;
+  }
+
+  #introOne {
+    font-size: 25px;
+  }
+
+  #introTwo h2, #introTwoDark h2 {
+    width: 540px;
+    margin: 0 auto;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  #introTwo img, #introTwoDark img {
+    width: 60px;
+  }
+
   .navLinksL a {
-    /* gap: 20px; */
+    font-size: 20px;
+    padding: 20px 35px 20px 20px;
+    margin: 0 20px;
+  }
+
+  .navLinksL a img {
+    height: 150%;
+  }
+
+  .content, .contentDark {
+    width: 1120px;
+  }
+
+  .content p, .contentDark p {
+    font-size: 24px;
+  }
+
+  .contentDark p {
+    color: lightgrey
+  }
+
+  .education li {
+    margin-left: 38%;
+  }
+
+  .educationDark li {
+    margin-left: 38%;
+  }
+}
+
+/* Bigger screen 1920+ ^^ */
+
+/* Tablet screen 625-900 vv */
+
+@media screen and (625px <= width <= 900px) {
+  .navLinksL a {
     margin: 0 10px 0 10px;
   }
 
-  .navLinksSE, .navLinksSE a {
-    display: none;
-  }
-
-  .navLinksSEDark, .navLinksSEDark a {
+  .navLinksSE, .navLinksSE a, .navLinksSEDark, .navLinksSEDark a {
     display: none;
   }
 }
 
-/* Tablet screen 566-899 ^^ */
+/* Tablet screen 625-899 ^^ */
 
 /* Phone screen 350-565 vv */
 
-@media screen and (349px < width < 566px) {
+@media screen and (350px <= width <= 565px) {
 
-  .nav a, .navDark a {
+  /* .nav a, .navDark a {
     font-size: 16px;
   }
 
   .nav h1, .navDark h1 {
     padding: 18px 0;
     font-size: 20px;
-  }
+  } */
 
   #introTwo h2 {
     width: 300px;
@@ -741,7 +729,7 @@ table, th, td {
 
 /* Phone screen -350 vv */
 
-@media screen and (width < 350px) {
+@media screen and (width <= 350px) {
 
   .nav h1, .navDark h1 {
     padding: 18px 0;
@@ -802,9 +790,9 @@ table, th, td {
 
 /* Phone screen -350 ^^ */
 
-/* Hamburger menu all screens below 565 vv*/
+/* Hamburger menu all screens below 625 vv*/
 
-@media screen and (width < 566px) {
+@media screen and (width <= 625px) {
   .navLinksL {
     display: none;
   }
@@ -815,26 +803,35 @@ table, th, td {
   }
 }
 
-/* Hamburger menu all screens below 565 ^^ */
+/* Hamburger menu all screens below 625 ^^ */
 
 /* Nav Links Small Expanded position vv */
 
-@media screen and (306px < width < 566px) {
+@media screen and (350px <= width <= 565px) {
   .navLinksSE, .navLinksSEDark {
     top: 78px;
+    top: 60px;
   }
 }
 
-@media screen and (181px < width < 307px) {
+@media screen and (305px <= width <= 349px) {
   .navLinksSE, .navLinksSEDark {
-    top: 102px;
+    top: 78px;
+    /* top: 60px; */
+  }
+}
+
+@media screen and (180px <= width <= 304px) {
+  .navLinksSE, .navLinksSEDark {
+    top: 78px;
+    /* top: 102px; */
   }
   .nav a, .navDark a {
     font-size: 14px;
   }
 }
 
-@media screen and (1px < width < 182px) {
+@media screen and (1px < width <= 181px) {
   .navLinksSE, .navLinksSEDark {
     top: 126px;
   }
@@ -853,7 +850,6 @@ table, th, td {
   position: relative;
   bottom: 10px;
   box-shadow: 5px 5px 5px grey !important;
-  cursor: pointer;
   transition: 250ms;
 }
 
@@ -861,7 +857,6 @@ table, th, td {
   position: relative;
   bottom: 5px;
   box-shadow: 5px 5px 5px grey;
-  cursor: crosshair;
   color: lightgrey;
   background-color: seagreen;
   border-radius: 40px;
