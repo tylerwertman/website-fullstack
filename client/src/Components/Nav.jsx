@@ -11,6 +11,10 @@ import blogLG from './images/Blog-LG.svg'
 import projectsLG from './images/Projects-LG.svg'
 import educationLG from './images/Education-LG.svg'
 import contactLG from './images/Contact-LG.svg'
+import xLG from './images/xmark-solid-LG.svg'
+import xDSG from './images/xmark-solid-DSG.svg'
+import barsLG from './images/bars-solid-LG.svg'
+import barsDSG from './images/bars-solid-DSG.svg'
 
 const Nav = (props) => {
   const { darkMode, windowWidth } = props
@@ -38,7 +42,7 @@ const Nav = (props) => {
         <a className={hoveredElement === 5 ? 'shadowNav' : null} onMouseEnter={() => { hover(5) }} onMouseLeave={hover} href="#contact"><img src={hoveredElement === 5 ? contactLG : !darkMode ? contactDSG : contactLG} alt="contact" /><span className={hoveredElement === 5 ? 'navLiHover' : 'hidden'}>&nbsp;{windowWidth > 625 ? "Contact" : null}</span></a>
       </div>
       <div id="hamburger" className="navLinksS">
-        <a className="icon hover" onMouseEnter={hover} onMouseOut={hover} href={"#null"} onClick={miniNav}><i className="fa fa-bars" style={darkMode ? { color: "lightgrey" } : null}></i></a>&nbsp;
+        <a className="icon hover" onMouseEnter={hover} onMouseOut={hover} href={"#null"} onClick={miniNav}><img src={isNavOpen && darkMode ? xLG : isNavOpen ? xDSG : darkMode ? barsLG : barsDSG} alt="bars" width="20px"/></a>&nbsp;
       </div>
     </nav>
   )

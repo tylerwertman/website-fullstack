@@ -534,8 +534,24 @@ table, th, td {
   color: whitesmoke;
 }
 
-#space {
+/* #space {
   text-decoration: none;
+} */
+
+.darkmodeL, .darkmodeD {
+  position: fixed;
+  bottom: 10%;
+  left: 5%;
+  border-radius: 100%;
+  border: 0px;
+  /* box-shadow: 5px 5px 5px grey; */
+  background-color: lightgrey;
+  padding: 10px 12px;
+}
+.darkmodeD {
+  /* box-shadow: 5px 5px 5px lightgrey; */
+  background-color: rgb(50, 50, 50);
+  padding: 10px 14px;
 }
 
 /* Pokemon ^^ */

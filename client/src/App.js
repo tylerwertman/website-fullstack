@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 import LoginForm from './Components/LoginForm';
 import RegisterForm from './Components/RegisterForm';
 import Messages from './Components/Messages';
+import DarkMode from './Components/DarkMode';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -37,6 +38,7 @@ function App() {
           <Route path="/*" element={<NotFound darkMode={darkMode} />} />
         </Routes>
         <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
+        <DarkMode darkMode={darkMode} setDarkMode={setDarkMode} />
       </div>
     </BrowserRouter>
   );
