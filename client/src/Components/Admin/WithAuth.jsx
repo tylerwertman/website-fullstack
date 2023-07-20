@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Cookies from 'js-cookie';
-import NotFound from './NotFound';
+import NotFound from '../NotFound';
 import jwtdecode from 'jwt-decode'
 
 const withAuth = (Component) => {

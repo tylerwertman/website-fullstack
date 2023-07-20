@@ -1,5 +1,5 @@
 import React from 'react'
-import WTP from './WTP'
+import WTP from '../WTP'
 
 const Projects = (props) => {
     const { darkMode } = props

@@ -1,17 +1,18 @@
-import './App.css';
-import Nav from './Components/Nav';
-import Main from './Components/Main';
-import Footer from './Components/Footer';
-import NotFound from './Components/NotFound';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css'
+import Nav from './Components/Nav'
+import Main from './Components/Main'
+import Footer from './Components/Footer'
+import NotFound from './Components/NotFound'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useState, useEffect } from 'react'
-import LoginForm from './Components/LoginForm';
-import RegisterForm from './Components/RegisterForm';
-import Messages from './Components/Messages';
-import DarkMode from './Components/DarkMode';
-import { ToastContainer, Slide } from 'react-toastify';
+import LoginForm from './Components/Admin/LoginForm'
+import RegisterForm from './Components/Admin/RegisterForm'
+import Messages from './Components/Admin/Messages'
+import DarkMode from './Components/DarkMode'
+import { ToastContainer, Slide } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import 'react-tooltip/dist/react-tooltip.css'
 
-  import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [darkMode, setDarkMode] = useState(false)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -32,7 +33,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Nav darkMode={darkMode} windowWidth={windowWidth} />
-        <ToastContainer transition={Slide} position="bottom-right" autoClose={2500} hideProgressBar= {false} closeOnClick= {true} pauseOnHover= {true} draggable= {true} progress= {undefined} theme= {darkMode ? "dark" : "light"} />
+        <ToastContainer transition={Slide} position="bottom-right" autoClose={2500} hideProgressBar={false} closeOnClick={true} pauseOnHover={true} draggable={true} progress={undefined} theme={darkMode ? "dark" : "light"} />
         <Routes>
           <Route path="/" element={<Main darkMode={darkMode} windowWidth={windowWidth} />} />
           <Route path="/admin-login" element={<LoginForm darkMode={darkMode} />} />

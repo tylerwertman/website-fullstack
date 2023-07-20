@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import Cookies from 'js-cookie'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faSun } from '@fortawesome/free-solid-svg-icons'
-// import { faMoon } from '@fortawesome/free-solid-svg-icons'
+import { Tooltip } from 'react-tooltip'
 import sunDSG from './images/FontAwesome-Icons/sun-regular-DSG.svg'
 import moonLG from './images/FontAwesome-Icons/moon-regular-LG.svg'
 
@@ -35,7 +33,10 @@ const DarkMode = (props) => {
 
     }
     return (
-        <button className={darkMode ? "darkmodeL" : "darkmodeD"} onClick={colorToggle}>{darkMode ? <img src={sunDSG} alt="sun" width={"20px"} /> : <img src={moonLG} alt="moon" width={"20px"} />}</button>
+        <>
+            <Tooltip id="darkmode" />
+            <button data-tooltip-id="darkmode" data-tooltip-content={darkMode ? "Light Mode" : "Dark Mode"} className={darkMode ? "darkmodeL" : "darkmodeD"} onClick={colorToggle}>{darkMode ? <img src={sunDSG} alt="sun" width={"20px"} /> : <img src={moonLG} alt="moon" width={"20px"} />}</button>
+        </>
     )
 }
 

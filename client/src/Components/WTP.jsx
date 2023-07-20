@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import wtp from './images/WTP.mov'
 import axios from 'axios'
+import { Tooltip } from 'react-tooltip'
 
 const WTP = () => {
     let rng = Math.floor((Math.random() * 386) + 1)
@@ -89,17 +90,17 @@ const WTP = () => {
     }
 
     const backPoke = () => {
-        if (!isHidden && !isFront) setIsFront(!isFront)
+        if (!isHidden && isFront) setIsFront(!isFront)
     }
     const frontPoke = () => {
-        if (!isHidden && isFront) setIsFront(!isFront)
+        if (!isHidden && !isFront) setIsFront(!isFront)
     }
 
     const femalePoke = () => {
-        if (!isHidden && isFemale && pokeObj.spriteBDf) setIsFemale(!isFemale)
+        if (!isHidden && !isFemale && pokeObj.spriteBDf) setIsFemale(true)
     }
     const malePoke = () => {
-        if (!isHidden && !isFemale && pokeObj.spriteBDf) setIsFemale(!isFemale)
+        if (!isHidden && isFemale && pokeObj.spriteBDf) setIsFemale(false)
 
     }
 
@@ -109,6 +110,14 @@ const WTP = () => {
 
     return (
         <div>
+            <Tooltip id="shinyPoke" />
+            <Tooltip id="backPoke" />
+            <Tooltip id="frontPoke" />
+            <Tooltip id="defaultPoke" />
+            <Tooltip id="newPoke" />
+            <Tooltip id="revealPoke" />
+            <Tooltip id="femalePoke" />
+            <Tooltip id="malePoke" />
             <h4>Who's That Pokemon? (Interactive)</h4>
             <br />
             <div className="gameboy">
@@ -118,13 +127,13 @@ const WTP = () => {
                             !isShiny && isFront && isFemale ? pokeObj.spriteFDf :
                                 isShiny && isFront && isFemale ? pokeObj.spriteFSf :
                                     !isShiny && !isFront && isFemale ? pokeObj.spriteBDf :
-                                        isShiny && !isFront && isFemale ? pokeObj.spriteBS :
+                                        isShiny && !isFront && isFemale ? pokeObj.spriteBSf :
                                             !isShiny && isFront ? pokeObj.spriteFD :
                                                 isShiny && isFront ? pokeObj.spriteFS :
                                                     !isShiny && !isFront ? pokeObj.spriteBD :
                                                         isShiny && !isFront ? pokeObj.spriteBS : null
                         } className={isHidden ? "sillhouette" : null} alt="sillhouette" />
-                        <p id="textBox">{isHidden ? "Who's that Pokemon?" : isFemale ? `It's ${capitalize(pokeObj.pName)} ♀` :`It's ${capitalize(pokeObj.pName)} ♂`}</p>
+                        <p id="textBox">{isHidden ? "Who's that Pokemon?" : isFemale ? `It's ${capitalize(pokeObj.pName)} ♀` :`It's ${capitalize(pokeObj.pName)}`}</p>
                     </div>
                     <br />
                     <p>GAMEBOY <span className="C">C</span><span className="O">O</span><span className="L">L</span><span className="O2">O</span><span className="R">R</span></p>
@@ -133,27 +142,27 @@ const WTP = () => {
                 <div className="gameboyCtrl">
                     <div className="dpad">
                         <div className="sqBtn"></div>
-                        <div className="sqBtn activeBtn" onClick={shinyPoke}>^</div>
+                        <div className="sqBtn activeBtn" onClick={shinyPoke} data-tooltip-id="shinyPoke" data-tooltip-content="Shiny variant">^</div>
                         <div className="sqBtn"></div>
-                        <div className="sqBtn activeBtn" onClick={backPoke}>&lt;</div>
+                        <div className="sqBtn activeBtn" onClick={backPoke} data-tooltip-id="backPoke" data-tooltip-content="Back view">&lt;</div>
                         <div className="sqBtn dot">•</div>
-                        <div className="sqBtn activeBtn" onClick={frontPoke}>&gt;</div>
+                        <div className="sqBtn activeBtn" onClick={frontPoke} data-tooltip-id="frontPoke" data-tooltip-content="Front view">&gt;</div>
                         <div className="sqBtn"></div>
-                        <div className="sqBtn activeBtn" onClick={defaultPoke}>v</div>
+                        <div className="sqBtn activeBtn" onClick={defaultPoke} data-tooltip-id="defaultPoke" data-tooltip-content="Default variant">v</div>
                         <div className="sqBtn"></div>
                     </div>
                     <div className="AB">
-                        <div className="cirBtn" onClick={newPoke}>B</div>
-                        <div className="cirBtn A" onClick={revealPoke}>A</div>
+                        <div className="cirBtn" onClick={newPoke} data-tooltip-id="newPoke" data-tooltip-content="New Pokemon">B</div>
+                        <div className="cirBtn A" onClick={revealPoke} data-tooltip-id="revealPoke" data-tooltip-content="Reveal Pokemon">A</div>
                     </div>
                 </div>
                 <div className="ss">
                     <div className="start">
-                        <div className="ssBtn activeBtn" onClick={femalePoke}></div>
+                        <div className="ssBtn activeBtn" onClick={femalePoke} data-tooltip-id="femalePoke" data-tooltip-content="Female variant (if available)"></div>
                         <div className="ssText">Start</div>
                     </div>
                     <div className="select">
-                        <div className="ssBtn activeBtn" onClick={malePoke}></div>
+                        <div className="ssBtn activeBtn" onClick={malePoke} data-tooltip-id="malePoke" data-tooltip-content="Male variant (default)"></div>
                         <div className="ssText">Select</div>
                     </div>
                 </div>

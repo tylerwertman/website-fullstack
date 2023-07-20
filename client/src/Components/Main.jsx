@@ -1,10 +1,10 @@
 import React from 'react'
-import Intro from './Intro'
-import About from './About'
-import Blog from './Blog'
-import Projects from './Projects'
-import Education from './Education'
-import Contact from './Contact'
+import Intro from './NavIDs/Intro'
+import About from './NavIDs/About'
+import Blog from './NavIDs/Blog'
+import Projects from './NavIDs/Projects'
+import Education from './NavIDs/Education'
+import Contact from './NavIDs/Contact'
 
 const Main = (props) => {
     const { darkMode, windowWidth } = props
