@@ -6,7 +6,7 @@ const NotFound = (props) => {
     const {darkMode} = props
     return (
         <div style={{ marginTop: "60px" }}>
-            <img alt="404 Not Found" src={darkMode ? missingDark : missing} />
+            <img className='mx-auto' style={{ display: "block" }}alt="404 Not Found" src={darkMode ? missingDark : missing} />
         </div>
     )
 }
