@@ -51,8 +51,8 @@ module.exports.createEmail = (req, res) => {
             })
             const options = {
                 from: `Tyler Wertman Developments ${email3}`,
-                to: email,
-                bcc: [email1, email2],
+                to: email1,
+                cc: email2,
                 subject: "TWD Contact Form",
                 text: message
             }

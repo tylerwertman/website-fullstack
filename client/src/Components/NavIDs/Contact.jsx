@@ -56,7 +56,7 @@ const Contact = (props) => {
             <div className={darkMode ? "contentDark" : "content"} id="form" style={{ padding: "40px" }}>
                 <form onSubmit={submitHandler} onClick={() => setMsgSent(false)}>
                     <h3>Contact Form</h3>
-                    {msgSent ? <h4 style={{ color: darkMode ? "lightgreen" : "mediumseagreen" }}>Message sent! (Check spam folder!)</h4> : null}
+                    {msgSent ? <h4 style={{ color: darkMode ? "lightgreen" : "mediumseagreen" }}>Message sent!</h4> : null}
                     <div className="row">
                         <div className={windowWidth < 900 ? "form-floating mb-3 col col-12" : "form-floating mb-3 col"}>
                             <input type="text" className="form-control custom-input col" name="fName" id="fName" value={contactForm.fName} onChange={changeHandler} placeholder="Name" autoComplete="name" />
