@@ -39,7 +39,7 @@ module.exports.deleteAllMessages = (req, res) => {
 module.exports.createEmail = (req, res) => {
     // console.log('controller' + req.body)
 
-    const sendEmail = ({ email, message }) => {
+    const sendEmail = ({ fName, email, message }) => {
         return new Promise((resolve, reject) => {
             const transporter = nodemailer.createTransport({
                 service: "hotmail",
@@ -54,7 +54,7 @@ module.exports.createEmail = (req, res) => {
                 to: email1,
                 cc: email2,
                 subject: "TWD Contact Form",
-                text: message
+                text: `name: ${fName}\nemail: ${email}\nmessage: ${message}`
             }
             transporter.sendMail(options, (err, info) => {
                 if (err) {
