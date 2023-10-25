@@ -8,21 +8,17 @@ const Tech = (props) => {
         <div className={darkMode ? "section techDark" : "section tech"} id="tech">
             <h2 style={{ marginTop: windowWidth > 1919 ? "69px" : windowWidth < 351 ? "30px" : "12px" }}>Tyler's Tech Services</h2>
             <div className={darkMode ? "contentDark" : "content"}>
-                <h3>Servicing:</h3>
+                <h3>Installing & Servicing:</h3>
                 <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
                     <li>Wi-Fi Networks</li>
                     <li>Printers</li>
                     <li>Computers/Laptops</li>
                     <li>iPhone/Android Phones</li>
-                </ul>
-                <h3>Installing:</h3>
-                <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
-                    <li>Wi-Fi Networks</li>
-                    <li>Printers</li>
                     <li>Smart Doorbells</li>
                     <li>Smart Cameras</li>
                     <li>TVs</li>
                     <li>Audio/Video</li>
+                    <li>Websites</li>
                 </ul>
                 {/* <p style={{textAlign:"center", margin:"10px"}}><Link to='https://medium.com/@tylerwertman/auto-re-deploy-ci-cd-your-javscript-mern-stack-apps-mongo-express-react-node-with-github-c00ef211bda8' style={{ textAlign: "center" }}>Book an appointment on Calendly</Link></p> */}
             </div>
