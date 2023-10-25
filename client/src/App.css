@@ -3,7 +3,7 @@
   padding: 0;
   font-family: sans-serif;
   /* border: 1px dotted red; */
-  color: rgb(50, 50, 50)
+  /* color: rgb(50, 50, 50) */
 }
 
 body {
@@ -54,16 +54,16 @@ body.change::after {
   display: flex;
   position: fixed;
   top: 0%;
-  width: 100%;
   /* padding: 0 20px 0 20px; */
   overflow: hidden;
 }
 
 .nav, .navDark, footer {
+  width: 100%;
   background-color: lightgrey;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px 0 20px;
+  padding: 0 10px;
   box-shadow: 0 0 10px black;
   /* position: fixed; */
   z-index: 100;
@@ -168,7 +168,7 @@ footer {
   justify-content: center;
 }
 
-.section, .sectionDark {
+.section {
   padding-top: 50px;
   width: 100%;
 }
@@ -247,7 +247,7 @@ main {
   color: lightgrey;
 }
 
-.about h2, .blog h2, .projects h2, .contact h2, .education h2, .aboutDark h2, .blogDark h2, .projectsDark h2, .contactDark h2, .educationDark h2 {
+.about h2, .blog h2, .projects h2, .contact h2, .education h2, .tech h2, .aboutDark h2, .blogDark h2, .projectsDark h2, .contactDark h2, .educationDark h2, .techDark h2 {
   background-color: lightgrey;
   text-align: center;
   padding: 10px 0 10px 0;
@@ -257,7 +257,7 @@ main {
   font-weight: bold;
 }
 
-.aboutDark h2, .blogDark h2, .projectsDark h2, .contactDark h2, .educationDark h2 {
+.aboutDark h2, .blogDark h2, .projectsDark h2, .contactDark h2, .educationDark h2, .techDark h2 {
   background-color: rgb(50, 50, 50);
   color: lightgrey;
   box-shadow: 0 0 10px lightgrey;

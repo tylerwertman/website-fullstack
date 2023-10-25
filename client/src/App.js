@@ -12,6 +12,7 @@ import DarkMode from './Components/DarkMode'
 import { ToastContainer, Slide } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import 'react-tooltip/dist/react-tooltip.css'
+import Tech from './Components/Tech'
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -36,6 +37,7 @@ function App() {
         <ToastContainer transition={Slide} position="bottom-right" autoClose={2500} hideProgressBar={false} closeOnClick={true} pauseOnHover={true} draggable={true} progress={undefined} theme={darkMode ? "dark" : "light"} />
         <Routes>
           <Route path="/" element={<Main darkMode={darkMode} windowWidth={windowWidth} />} />
+          <Route path="/tech" element={<Tech darkMode={darkMode} windowWidth={windowWidth} />} />
           <Route path="/admin-login" element={<LoginForm darkMode={darkMode} />} />
           <Route path="/admin-register" element={<RegisterForm darkMode={darkMode} />} />
           <Route path="/messages" element={<Messages darkMode={darkMode} />} />
