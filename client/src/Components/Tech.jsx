@@ -14,15 +14,16 @@ const Tech = (props) => {
                     <li>Printers</li>
                     <li>Computers/Laptops</li>
                     <li>iPhone/Android Phones</li>
-                    <li>Smart Doorbells</li>
-                    <li>Smart Cameras</li>
+                    <li>Smart Cameras/Doorbells</li>
                     <li>TVs</li>
-                    <li>Audio/Video</li>
+                    <li>Audio/Video Systems</li>
                     <li>Websites</li>
                 </ul>
                 {/* <p style={{textAlign:"center", margin:"10px"}}><Link to='https://medium.com/@tylerwertman/auto-re-deploy-ci-cd-your-javscript-mern-stack-apps-mongo-express-react-node-with-github-c00ef211bda8' style={{ textAlign: "center" }}>Book an appointment on Calendly</Link></p> */}
             </div>
-            <h2 style={{ marginTop: windowWidth > 1919 ? "69px" : windowWidth === 320 ? "30px" : "12px" }}>Tyler's Misc Services</h2>
+
+            {/* MISC SERVICES COMMENTED OUT */}
+            {/* <h2 style={{ marginTop: windowWidth > 1919 ? "69px" : windowWidth === 320 ? "30px" : "12px" }}>Tyler's Misc Services</h2>
             <div className={darkMode ? "contentDark" : "content"}>
                 <h3>Services:</h3>
                 <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
@@ -30,11 +31,13 @@ const Tech = (props) => {
                     <li>IKEA furniture assembly</li>
                     <li>Furniture moving</li>
                 </ul>
-                {/* <p style={{textAlign:"center", margin:"10px"}}><Link to='https://medium.com/@tylerwertman/auto-re-deploy-ci-cd-your-javscript-mern-stack-apps-mongo-express-react-node-with-github-c00ef211bda8' style={{ textAlign: "center" }}>Book an appointment on Calendly</Link></p> */}
-            </div>
+            </div> */}
             <br />
-            <h2 style={{padding: "10px 30px"}}>
+            <h2 style={{ padding: "10px 30px" }}>
                 Please call or text <span style={{ color: "#009050" }}>516 660 7019</span> to book an appointment
+            </h2>
+            <h2 style={{ padding: "10px 30px" }}>
+                If you are satisifed with my services, please <span style={{ color: "#009050" }}><a href='https://review.tylerw.xyz' target="_blank" rel="noreferrer">click here to leave a Google Review</a></span>
             </h2>
             <br /><br /><br />
         </div>
