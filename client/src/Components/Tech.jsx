@@ -34,7 +34,7 @@ const Tech = (props) => {
             </div> */}
             <br />
             <h2 style={{ padding: "10px 30px" }}>
-                Please <a href="tel:5166607019" style={{ color: "#009050" }}>call</a> or <a href="sms:5166607019" style={{ color: "#009050" }}>text</a> <span style={{ color: "#009050" }}>516 660 7019</span> to book an appointment
+                Please <a href="tel:5166607019" style={{ color: "#009050" }}>call</a> or <a href="sms:5166607019" style={{ color: "#009050" }}>text</a> me at <span style={{ color: "#009050" }}>516 660 7019</span> to book an appointment
             </h2>
             <h2 style={{ padding: "10px 30px" }}>
                 If you are satisifed with my services, please <span style={{ color: "#009050" }}><a href='https://review.tylerw.xyz' target="_blank" rel="noreferrer">click here to leave a Google Review</a></span>
