@@ -6,10 +6,10 @@ const Tech = (props) => {
 
     return (
         <div className={darkMode ? "section techDark" : "section tech"} id="tech">
-            <h2 style={{ marginTop: windowWidth > 1919 ? "69px" : windowWidth < 351 ? "30px" : "12px" }}>Tyler's Tech Services</h2>
+            <h2 style={{ marginTop: windowWidth > 1919 ? "69px" : windowWidth < 351 ? "30px" : "25px", marginBottom: "25px" }}>Tyler's Tech Services</h2>
             <div className={darkMode ? "contentDark" : "content"}>
                 <h3>Installing & Servicing:</h3>
-                <ul style={{ listStyleType: "none", paddingLeft: "0" }}>
+                <ul style={{ listStyleType: "none", paddingLeft: "0", marginBottom: "0" }}>
                     <li>Wi-Fi Networks</li>
                     <li>Printers</li>
                     <li>Computers/Laptops</li>
@@ -33,13 +33,13 @@ const Tech = (props) => {
                 </ul>
             </div> */}
             <br />
-            <h2 style={{ padding: "10px 30px" }}>
+            <h2 style={{ padding: "10px 30px", marginBottom: "25px" }}>
                 Please <a href="tel:5166607019" style={{ color: "#009050" }}>call</a> or <a href="sms:5166607019" style={{ color: "#009050" }}>text</a> me at <span style={{ color: "#009050" }}>516 660 7019</span> to book an appointment
             </h2>
-            <h2 style={{ padding: "10px 30px" }}>
+            <h2 style={{ padding: "10px 30px", marginBottom: "25px" }}>
                 If you are satisifed with my services, please <a href='https://review.tylerw.xyz' style={{ color: "#009050" }} target="_blank" rel="noreferrer">click here to leave a Google Review</a>
             </h2>
-            <br /><br /><br />
+            <br /><br />
         </div>
     )
 }
