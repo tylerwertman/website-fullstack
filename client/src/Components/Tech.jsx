@@ -33,10 +33,10 @@ const Tech = (props) => {
                 </ul>
             </div> */}
             <br />
-            <h2 style={{ padding: "10px 30px", marginBottom: "25px" }}>
+            <h2 style={{ padding: "10px 30px", marginBottom: "25px", fontSize: windowWidth < 600 ? "1.25rem" : null }}>
                 Please <a href="tel:5166607019" style={{ color: "#009050" }}>call</a> or <a href="sms:5166607019" style={{ color: "#009050" }}>text</a> me at <span style={{ color: "#009050" }}>516 660 7019</span> to book an appointment
             </h2>
-            <h2 style={{ padding: "10px 30px", marginBottom: "25px" }}>
+            <h2 style={{ padding: "10px 30px", marginBottom: "25px", fontSize: windowWidth < 600 ? "1.25rem" : null }}>
                 If you are satisifed with my services, please <a href='https://review.tylerw.xyz' style={{ color: "#009050" }} target="_blank" rel="noreferrer">click here to leave a Google Review</a>
             </h2>
             <br /><br />
