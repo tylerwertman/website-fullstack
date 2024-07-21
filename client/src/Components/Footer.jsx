@@ -5,7 +5,7 @@ const Footer = (props) => {
 
   return (
     <footer className={darkMode ? "footerDark" : null}>
-      <span>© 2023 Tyler Wertman Developments</span>
+      <span>© {new Date().getFullYear()} Tyler Wertman Developments</span>
     </footer>
   )
 }
